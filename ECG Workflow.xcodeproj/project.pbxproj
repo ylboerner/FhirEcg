@@ -15,6 +15,12 @@
 		AFA6CF1323CF707C00323206 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFA6CF1123CF707C00323206 /* LaunchScreen.storyboard */; };
 		AFA6CF1E23CF707D00323206 /* ECG_WorkflowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA6CF1D23CF707D00323206 /* ECG_WorkflowTests.swift */; };
 		AFA6CF2923CF707D00323206 /* ECG_WorkflowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA6CF2823CF707D00323206 /* ECG_WorkflowUITests.swift */; };
+		AFA6CF3D23CF713F00323206 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA6CF3C23CF713F00323206 /* ShareViewController.swift */; };
+		AFA6CF4023CF713F00323206 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFA6CF3E23CF713F00323206 /* MainInterface.storyboard */; };
+		AFA6CF4423CF713F00323206 /* ECG Workflow Share Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AFA6CF3A23CF713F00323206 /* ECG Workflow Share Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		AFAF74B223CFA04F00B72981 /* ZipArchive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFAF74AC23CF7C5900B72981 /* ZipArchive.framework */; };
+		AFAF74B323CFA0F500B72981 /* ZipArchive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFAF74AC23CF7C5900B72981 /* ZipArchive.framework */; };
+		AFAF74B623CFA3D400B72981 /* CSVReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAF74B523CFA3D400B72981 /* CSVReader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,7 +38,28 @@
 			remoteGlobalIDString = AFA6CF0223CF707700323206;
 			remoteInfo = "ECG Workflow";
 		};
+		AFA6CF4223CF713F00323206 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AFA6CEFB23CF707700323206 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AFA6CF3923CF713F00323206;
+			remoteInfo = "ECG Workflow Share Extension";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AFA6CF4823CF713F00323206 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				AFA6CF4423CF713F00323206 /* ECG Workflow Share Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		AFA6CF0323CF707700323206 /* ECG Workflow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ECG Workflow.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,6 +76,12 @@
 		AFA6CF2423CF707D00323206 /* ECG WorkflowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ECG WorkflowUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFA6CF2823CF707D00323206 /* ECG_WorkflowUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECG_WorkflowUITests.swift; sourceTree = "<group>"; };
 		AFA6CF2A23CF707D00323206 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AFA6CF3A23CF713F00323206 /* ECG Workflow Share Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "ECG Workflow Share Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFA6CF3C23CF713F00323206 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		AFA6CF3F23CF713F00323206 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		AFA6CF4123CF713F00323206 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AFAF74AC23CF7C5900B72981 /* ZipArchive.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ZipArchive.framework; path = Carthage/Build/iOS/ZipArchive.framework; sourceTree = "<group>"; };
+		AFAF74B523CFA3D400B72981 /* CSVReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVReader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFAF74B323CFA0F500B72981 /* ZipArchive.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +107,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AFA6CF3723CF713F00323206 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFAF74B223CFA04F00B72981 /* ZipArchive.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -82,7 +124,9 @@
 				AFA6CF0523CF707700323206 /* ECG Workflow */,
 				AFA6CF1C23CF707D00323206 /* ECG WorkflowTests */,
 				AFA6CF2723CF707D00323206 /* ECG WorkflowUITests */,
+				AFA6CF3B23CF713F00323206 /* ECG Workflow Share Extension */,
 				AFA6CF0423CF707700323206 /* Products */,
+				AFAF748B23CF75BE00B72981 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,6 +136,7 @@
 				AFA6CF0323CF707700323206 /* ECG Workflow.app */,
 				AFA6CF1923CF707D00323206 /* ECG WorkflowTests.xctest */,
 				AFA6CF2423CF707D00323206 /* ECG WorkflowUITests.xctest */,
+				AFA6CF3A23CF713F00323206 /* ECG Workflow Share Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -136,6 +181,25 @@
 			path = "ECG WorkflowUITests";
 			sourceTree = "<group>";
 		};
+		AFA6CF3B23CF713F00323206 /* ECG Workflow Share Extension */ = {
+			isa = PBXGroup;
+			children = (
+				AFA6CF3C23CF713F00323206 /* ShareViewController.swift */,
+				AFA6CF3E23CF713F00323206 /* MainInterface.storyboard */,
+				AFA6CF4123CF713F00323206 /* Info.plist */,
+				AFAF74B523CFA3D400B72981 /* CSVReader.swift */,
+			);
+			path = "ECG Workflow Share Extension";
+			sourceTree = "<group>";
+		};
+		AFAF748B23CF75BE00B72981 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AFAF74AC23CF7C5900B72981 /* ZipArchive.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,10 +210,13 @@
 				AFA6CEFF23CF707700323206 /* Sources */,
 				AFA6CF0023CF707700323206 /* Frameworks */,
 				AFA6CF0123CF707700323206 /* Resources */,
+				AFA6CF4823CF713F00323206 /* Embed App Extensions */,
+				AFAF74B423CFA1DB00B72981 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				AFA6CF4323CF713F00323206 /* PBXTargetDependency */,
 			);
 			name = "ECG Workflow";
 			productName = "ECG Workflow";
@@ -192,6 +259,23 @@
 			productReference = AFA6CF2423CF707D00323206 /* ECG WorkflowUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		AFA6CF3923CF713F00323206 /* ECG Workflow Share Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AFA6CF4523CF713F00323206 /* Build configuration list for PBXNativeTarget "ECG Workflow Share Extension" */;
+			buildPhases = (
+				AFA6CF3623CF713F00323206 /* Sources */,
+				AFA6CF3723CF713F00323206 /* Frameworks */,
+				AFA6CF3823CF713F00323206 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ECG Workflow Share Extension";
+			productName = "ECG Workflow Share Extension";
+			productReference = AFA6CF3A23CF713F00323206 /* ECG Workflow Share Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -213,6 +297,9 @@
 						CreatedOnToolsVersion = 11.3;
 						TestTargetID = AFA6CF0223CF707700323206;
 					};
+					AFA6CF3923CF713F00323206 = {
+						CreatedOnToolsVersion = 11.3;
+					};
 				};
 			};
 			buildConfigurationList = AFA6CEFE23CF707700323206 /* Build configuration list for PBXProject "ECG Workflow" */;
@@ -231,6 +318,7 @@
 				AFA6CF0223CF707700323206 /* ECG Workflow */,
 				AFA6CF1823CF707D00323206 /* ECG WorkflowTests */,
 				AFA6CF2323CF707D00323206 /* ECG WorkflowUITests */,
+				AFA6CF3923CF713F00323206 /* ECG Workflow Share Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -260,7 +348,37 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AFA6CF3823CF713F00323206 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFA6CF4023CF713F00323206 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AFAF74B423CFA1DB00B72981 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/ZipArchive.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(SRCROOT)/Carthage/Checkouts/ZipArchive",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AFA6CEFF23CF707700323206 /* Sources */ = {
@@ -289,6 +407,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AFA6CF3623CF713F00323206 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFA6CF3D23CF713F00323206 /* ShareViewController.swift in Sources */,
+				AFAF74B623CFA3D400B72981 /* CSVReader.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -302,6 +429,11 @@
 			target = AFA6CF0223CF707700323206 /* ECG Workflow */;
 			targetProxy = AFA6CF2523CF707D00323206 /* PBXContainerItemProxy */;
 		};
+		AFA6CF4323CF713F00323206 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AFA6CF3923CF713F00323206 /* ECG Workflow Share Extension */;
+			targetProxy = AFA6CF4223CF713F00323206 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -311,6 +443,14 @@
 				AFA6CF1223CF707C00323206 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		AFA6CF3E23CF713F00323206 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AFA6CF3F23CF713F00323206 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -433,11 +573,16 @@
 		AFA6CF2E23CF707D00323206 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ECG Workflow/Preview Content\"";
 				DEVELOPMENT_TEAM = ZN2U3UB7W5;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "ECG Workflow/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -453,11 +598,16 @@
 		AFA6CF2F23CF707D00323206 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ECG Workflow/Preview Content\"";
 				DEVELOPMENT_TEAM = ZN2U3UB7W5;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "ECG Workflow/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -554,6 +704,52 @@
 			};
 			name = Release;
 		};
+		AFA6CF4623CF713F00323206 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZN2U3UB7W5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "ECG Workflow Share Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bih.ECG-Workflow.ECG-Workflow-Share-Extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AFA6CF4723CF713F00323206 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZN2U3UB7W5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "ECG Workflow Share Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bih.ECG-Workflow.ECG-Workflow-Share-Extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -589,6 +785,15 @@
 			buildConfigurations = (
 				AFA6CF3423CF707D00323206 /* Debug */,
 				AFA6CF3523CF707D00323206 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AFA6CF4523CF713F00323206 /* Build configuration list for PBXNativeTarget "ECG Workflow Share Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AFA6CF4623CF713F00323206 /* Debug */,
+				AFA6CF4723CF713F00323206 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
