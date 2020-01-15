@@ -1,1 +1,2 @@
 github "ZipArchive/ZipArchive"
+github "smart-on-fhir/Swift-SMART"
