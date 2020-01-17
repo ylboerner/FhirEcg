@@ -1,2 +1,2 @@
 github "ZipArchive/ZipArchive" "v2.2.2"
-github "smart-on-fhir/Swift-SMART" "4.2.0"
+github "swiftcsv/SwiftCSV" "0.5.5"

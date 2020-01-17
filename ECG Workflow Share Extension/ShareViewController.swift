@@ -10,6 +10,7 @@ import UIKit
 import Social
 import MobileCoreServices
 import ZipArchive
+import SwiftCSV
 
 @objc (ShareViewController)
 
@@ -48,7 +49,8 @@ class ShareViewController: UIViewController {
     @IBAction func shareData(_ sender: UIButton) {
         unzipFile()
         let reader = CSVReader()
-        reader.printContentsOfDocumentsURL()
+        let arrayWithCSVs = reader.getCSVs()
+        print("Done")
     }
     
     func unzipFile() {

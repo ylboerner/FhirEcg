@@ -1,0 +1,31 @@
+{
+  "Mac" : [
+    {
+      "name" : "SwiftCSV",
+      "hash" : "12729e5f60ee5931fd06b7ca5a4135c9a2d74b1f5947921fe741eb4681df178d",
+      "swiftToolchainVersion" : "5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)"
+    }
+  ],
+  "watchOS" : [
+    {
+      "name" : "SwiftCSV",
+      "hash" : "ce2a4adb6e44e5406211412c53d9bfc3c55ffb0ab79aedb228216ea736d1ef6a",
+      "swiftToolchainVersion" : "5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)"
+    }
+  ],
+  "tvOS" : [
+    {
+      "name" : "SwiftCSV",
+      "hash" : "30b4764a1bcf033f2f500dfa5b01559b23bb24becfeffe4b1fdb762f57b49a8c",
+      "swiftToolchainVersion" : "5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)"
+    }
+  ],
+  "commitish" : "0.5.5",
+  "iOS" : [
+    {
+      "name" : "SwiftCSV",
+      "hash" : "7c89ac4208a82e80eb3032e97381dd5c019532a68d63e18c2d2784ed2a0f5fd9",
+      "swiftToolchainVersion" : "5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)"
+    }
+  ]
+}

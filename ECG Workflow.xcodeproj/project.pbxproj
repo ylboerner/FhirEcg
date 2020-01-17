@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF403EE123D1B9150025E0A8 /* SwiftCSV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF403EE023D1B9150025E0A8 /* SwiftCSV.framework */; };
+		AF403EE223D1B92A0025E0A8 /* SwiftCSV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF403EE023D1B9150025E0A8 /* SwiftCSV.framework */; };
 		AFA6CF0723CF707700323206 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA6CF0623CF707700323206 /* AppDelegate.swift */; };
 		AFA6CF0923CF707700323206 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA6CF0823CF707700323206 /* SceneDelegate.swift */; };
 		AFA6CF0B23CF707700323206 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA6CF0A23CF707700323206 /* ContentView.swift */; };
@@ -62,6 +64,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AF403EE023D1B9150025E0A8 /* SwiftCSV.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftCSV.framework; path = Carthage/Build/iOS/SwiftCSV.framework; sourceTree = "<group>"; };
 		AFA6CF0323CF707700323206 /* ECG Workflow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ECG Workflow.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFA6CF0623CF707700323206 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFA6CF0823CF707700323206 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +93,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFAF74B323CFA0F500B72981 /* ZipArchive.framework in Frameworks */,
+				AF403EE123D1B9150025E0A8 /* SwiftCSV.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +116,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFAF74B223CFA04F00B72981 /* ZipArchive.framework in Frameworks */,
+				AF403EE223D1B92A0025E0A8 /* SwiftCSV.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,6 +200,7 @@
 		AFAF748B23CF75BE00B72981 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AF403EE023D1B9150025E0A8 /* SwiftCSV.framework */,
 				AFAF74AC23CF7C5900B72981 /* ZipArchive.framework */,
 			);
 			name = Frameworks;
@@ -368,11 +374,13 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/ZipArchive.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftCSV.framework",
 			);
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"$(SRCROOT)/Carthage/Checkouts/ZipArchive",
+				"$(SRCROOT)/Carthage/Checkouts/SwiftCSV.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
