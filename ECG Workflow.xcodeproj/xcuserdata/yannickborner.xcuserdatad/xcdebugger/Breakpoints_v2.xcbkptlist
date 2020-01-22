@@ -7,15 +7,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B2D5D648-EFA2-418C-8A17-8CF130FF0C35"
-            shouldBeEnabled = "No"
+            uuid = "65D157A9-5880-487D-866E-BC9420C2A8A4"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ECG Workflow Share Extension/ShareViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
             landmarkName = "shareData(_:)"
             landmarkType = "7">
          </BreakpointContent>

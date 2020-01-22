@@ -48,8 +48,10 @@ class ShareViewController: UIViewController {
     
     @IBAction func shareData(_ sender: UIButton) {
         unzipFile()
-        let reader = CSVReader()
+        let reader = CSVImporter()
         let arrayWithCSVs = reader.getCSVs()
+        let converter = FHIRConverter()
+        let ecgsAsFHIR = converter.getFHIRInstancesFromCSV(allECGs: arrayWithCSVs)
         print("Done")
     }
     

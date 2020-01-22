@@ -11,7 +11,7 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image("heart-rate")
+            Image("1-01-transparent-cropped")
                 .resizable()
                 .scaledToFit()
             Text("1.\nOpen the Health App").multilineTextAlignment(.center)

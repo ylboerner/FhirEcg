@@ -1,0 +1,43 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "CSV.swift",
+        "repositoryURL": "https://github.com/yaslab/CSV.swift",
+        "state": {
+          "branch": null,
+          "revision": "67c5209ae699d5d3ded866de5ee6a6b4005a1b56",
+          "version": "2.4.2"
+        }
+      },
+      {
+        "package": "OAuth2",
+        "repositoryURL": "https://github.com/p2/OAuth2",
+        "state": {
+          "branch": null,
+          "revision": "5e2f70d12cdcbf7b10d8a9aab544e6990a490dcf",
+          "version": "5.1.1"
+        }
+      },
+      {
+        "package": "FHIR",
+        "repositoryURL": "https://github.com/smart-on-fhir/Swift-FHIR",
+        "state": {
+          "branch": null,
+          "revision": "b68fb5d6c8137de4a06894e683dc1a726a832907",
+          "version": "4.2.1"
+        }
+      },
+      {
+        "package": "SMART",
+        "repositoryURL": "https://github.com/smart-on-fhir/Swift-SMART",
+        "state": {
+          "branch": null,
+          "revision": "f5d283079e2e5cd12bd0076f05886d19bbd5e125",
+          "version": "4.2.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
