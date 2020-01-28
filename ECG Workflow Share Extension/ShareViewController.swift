@@ -9,8 +9,7 @@
 import UIKit
 import Social
 import MobileCoreServices
-import ZipArchive
-import SwiftCSV
+import CSV
 
 @objc (ShareViewController)
 
@@ -24,6 +23,20 @@ class ShareViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         getURLOfExportedZip()
+    }
+    
+    @IBAction func shareData(_ sender: UIButton) {
+        unzipExport()
+        let reader = CSVImporter()
+        let arrayWithCSVs = reader.getCSVs()
+        let converter = FHIRConverter()
+        let ecgsAsFHIR = converter.getFHIRInstancesFromCSV(allECGs: arrayWithCSVs)
+        print("Done")
+    }
+    
+    func unzipExport() {
+        let unzipper = Unzipper()
+        unzipper.unzipFile(relativePathToZip: relativePathToZip)
     }
     
     private func getURLOfExportedZip() {
@@ -45,41 +58,4 @@ class ShareViewController: UIViewController {
             print("error")
         }
     }
-    
-    @IBAction func shareData(_ sender: UIButton) {
-        unzipFile()
-        let reader = CSVImporter()
-        let arrayWithCSVs = reader.getCSVs()
-        let converter = FHIRConverter()
-        let ecgsAsFHIR = converter.getFHIRInstancesFromCSV(allECGs: arrayWithCSVs)
-        print("Done")
-    }
-    
-    func unzipFile() {
-        // This apps own document folder
-        let documentsURL: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        let relativePathToDocuments = documentsURL.relativePath
-        
-        // Unzip the export into this apps document folder. Will evaluate to false or nil if unsuccessful
-        let unzip: Void? = try? SSZipArchive.unzipFile(atPath: relativePathToZip!, toDestination: relativePathToDocuments, overwrite: true, password: nil)
-    }
-    
-   func blurView() {
-       // https://stackoverflow.com/questions/17041669/creating-a-blurring-overlay-view/25706250
-       // only apply the blur if the user hasn't disabled transparency effects
-
-       if UIAccessibility.isReduceTransparencyEnabled == false {
-           view.backgroundColor = .clear
-
-           let blurEffect = UIBlurEffect(style: .dark)
-           let blurEffectView = UIVisualEffectView(effect: blurEffect)
-           //always fill the view
-           blurEffectView.frame = self.view.bounds
-           blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-
-           view.insertSubview(blurEffectView, at: 0)
-       } else {
-           view.backgroundColor = .white
-       }
-   }
 }

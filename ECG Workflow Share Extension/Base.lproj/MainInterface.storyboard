@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="j1y-V4-xli">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="j1y-V4-xli">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -10,30 +10,50 @@
         <!--Share View Controller-->
         <scene sceneID="ceB-am-kn3">
             <objects>
-                <viewController id="j1y-V4-xli" customClass="ShareViewController" customModule="ECG_Connector_Share_Extension" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="j1y-V4-xli" customClass="ShareViewController" customModule="ECG_Workflow" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" opaque="NO" contentMode="scaleToFill" id="wbc-yd-nQP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gOY-19-b7a">
-                                <rect key="frame" x="184" y="433" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gOY-19-b7a">
+                                <rect key="frame" x="68.5" y="642" width="277" height="55"/>
+                                <color key="backgroundColor" red="0.9663398862" green="0.31464388970000001" blue="0.32909998299999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="contentEdgeInsets" minX="15" minY="15" maxX="15" maxY="15"/>
+                                <state key="normal" title="Send Data to Charité Berlin"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="shareData:" destination="j1y-V4-xli" eventType="touchUpInside" id="XtK-Zc-ihI"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="1-01-transparent-cropped" translatesAutoresizingMaskIntoConstraints="NO" id="nOe-5W-BNr">
+                                <rect key="frame" x="69" y="315" width="277" height="267"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="gOY-19-b7a" firstAttribute="centerX" secondItem="wbc-yd-nQP" secondAttribute="centerX" id="4lu-Ui-TyX"/>
-                            <constraint firstItem="gOY-19-b7a" firstAttribute="centerY" secondItem="wbc-yd-nQP" secondAttribute="centerY" id="Y8F-Af-Ziw"/>
+                            <constraint firstItem="gOY-19-b7a" firstAttribute="top" secondItem="nOe-5W-BNr" secondAttribute="bottom" constant="60.000000000000455" id="7f0-Te-m4b"/>
+                            <constraint firstItem="nOe-5W-BNr" firstAttribute="centerX" secondItem="gOY-19-b7a" secondAttribute="centerX" id="DYR-c5-pIJ"/>
+                            <constraint firstItem="nOe-5W-BNr" firstAttribute="centerY" secondItem="wbc-yd-nQP" secondAttribute="centerY" id="QBq-0K-dhW"/>
+                            <constraint firstItem="nOe-5W-BNr" firstAttribute="top" secondItem="1Xd-am-t49" secondAttribute="top" constant="271" id="ZJy-ui-27w"/>
+                            <constraint firstItem="1Xd-am-t49" firstAttribute="bottom" secondItem="gOY-19-b7a" secondAttribute="bottom" constant="165" id="kJw-4C-3Yi"/>
+                            <constraint firstItem="nOe-5W-BNr" firstAttribute="centerX" secondItem="wbc-yd-nQP" secondAttribute="centerX" id="lDr-Iv-7Wi"/>
+                            <constraint firstItem="nOe-5W-BNr" firstAttribute="leading" secondItem="1Xd-am-t49" secondAttribute="leading" constant="69" id="r81-Zx-ZGJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1Xd-am-t49"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CEy-Cv-SGf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="110"/>
+            <point key="canvasLocation" x="137.68115942028987" y="109.82142857142857"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="1-01-transparent-cropped" width="3026" height="3034"/>
+    </resources>
 </document>
