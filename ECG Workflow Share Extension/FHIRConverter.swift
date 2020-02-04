@@ -49,11 +49,6 @@ struct FHIRConverter {
             case "Name":
                 template!["subject"]["display"].string = valueTwo
                 template!["performer"]["display"].string = valueTwo
-                /*
-                var nameDict = template!["subject"] as! Dictionary<String,Any>
-                nameDict["display"] = row[1]
-                template!["subject"] = nameDict
-                */
             case "Device":
                 template!["device"]["display"].string = valueTwo
             case "Recorded Date":
@@ -70,10 +65,14 @@ struct FHIRConverter {
         // Add both strings holding all the values to the JSON object
         template!["component"][0]["valueSampledData"]["origin"]["value"].string = columnOne
         template!["component"][1]["valueSampledData"]["origin"]["value"].string = columnTwo
-
-        dump(template)
-        print("Hold")
-        return returnDummy() as! FHIRJSON
+        
+        do {
+            let convertedData = try JSONSerialization.jsonObject(with: template!.rawData(), options: []) as! FHIRJSON
+            return convertedData
+       } catch {
+            print(error)
+            return nil
+       }
     }
     
     func getJSONTemplate() -> JSON? {

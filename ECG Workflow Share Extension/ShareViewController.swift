@@ -10,6 +10,7 @@ import UIKit
 import Social
 import MobileCoreServices
 import CSV
+import SMART
 
 @objc (ShareViewController)
 
@@ -27,14 +28,28 @@ class ShareViewController: UIViewController {
     
     @IBAction func shareData(_ sender: UIButton) {
         unzipExport()
-        let reader = CSVImporter()
-        let arrayWithCSVs = reader.getCSVs()
-        let converter = FHIRConverter()
-        let ecgsAsFHIR = converter.getFHIRInstancesFromCSV(allECGs: arrayWithCSVs)
+        let ecgsInCSVFormat = getCSVsFromUnzippedExport()
+        if ecgsInCSVFormat.count == 0 {
+            // All the ECGs have been previously imported
+            return
+        }
+        let ecgsInFHIRFormat = convertCSVsToFHIR(arrayWithCSVs: ecgsInCSVFormat)
         print("Done")
     }
     
-    func unzipExport() {
+    private func convertCSVsToFHIR(arrayWithCSVs: Array<CSVReader>) -> Array<FHIRJSON> {
+        let converter = FHIRConverter()
+        let ecgsAsFHIR = converter.getFHIRInstancesFromCSV(allECGs: arrayWithCSVs)
+        return ecgsAsFHIR
+    }
+    
+    private func getCSVsFromUnzippedExport() -> Array<CSVReader> {
+        let importer = CSVImporter()
+        let arrayWithCSVs = importer.getCSVs()
+        return arrayWithCSVs
+    }
+    
+    private func unzipExport() {
         let unzipper = Unzipper()
         unzipper.unzipFile(relativePathToZip: relativePathToZip)
     }
@@ -57,5 +72,23 @@ class ShareViewController: UIViewController {
         } else {
             print("error")
         }
+    }
+    
+    private func showAlert() {
+        let alert = UIAlertController(title: "Alert", message: "Message", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+              switch action.style{
+              case .default:
+                    print("default")
+
+              case .cancel:
+                    print("cancel")
+
+              case .destructive:
+                    print("destructive")
+
+
+        }}))
+        self.present(alert, animated: true, completion: nil)
     }
 }

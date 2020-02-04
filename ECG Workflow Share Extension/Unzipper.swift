@@ -8,7 +8,6 @@
 
 import Foundation
 import ZipArchive
-import ZIPFoundation
 
 struct Unzipper {
     
@@ -20,14 +19,4 @@ struct Unzipper {
         // Unzip the export into this apps document folder. Will evaluate to false or nil if unsuccessful
         let unzip: Void? = try? SSZipArchive.unzipFile(atPath: relativePathToZip, toDestination: relativePathToDocuments, overwrite: true, password: nil)
     }
-    /*
-    func unzipFile(relativePathToZip: String) {
-        // This apps own document folder
-        let documentsURL: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        let relativePathToDocuments = documentsURL.relativePath
-        
-        // Unzip the export into this apps document folder. Will evaluate to false or nil if unsuccessful
-        let unzip: Void? = try? SSZipArchive.unzipFile(atPath: relativePathToZip, toDestination: relativePathToDocuments, overwrite: true, password: nil)
-    }
- */
 }

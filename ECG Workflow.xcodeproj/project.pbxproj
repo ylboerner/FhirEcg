@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		AF19705C23E08B25009E38B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFA6CF0C23CF707C00323206 /* Assets.xcassets */; };
 		AF1C459223D6EBF30073C320 /* FHIRConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1C459123D6EBF30073C320 /* FHIRConverter.swift */; };
-		AF1C459423D6F9750073C320 /* JSONObservationECGTemplate.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1C459323D6F9750073C320 /* JSONObservationECGTemplate.json */; };
 		AF244DAF23D8626000E81FA4 /* Unzipper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF244DAE23D8626000E81FA4 /* Unzipper.swift */; };
 		AF244DB223D9828600E81FA4 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = AF244DB123D9828600E81FA4 /* SwiftyJSON */; };
 		AF244DB423D9A8F600E81FA4 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFA6CF3E23CF713F00323206 /* MainInterface.storyboard */; };
@@ -31,6 +30,7 @@
 		AFAF74B623CFA3D400B72981 /* CSVImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAF74B523CFA3D400B72981 /* CSVImporter.swift */; };
 		AFC266A523D738B000B56A0A /* SMART in Frameworks */ = {isa = PBXBuildFile; productRef = AFC266A423D738B000B56A0A /* SMART */; };
 		AFC266A823D85A1C00B56A0A /* CSV in Frameworks */ = {isa = PBXBuildFile; productRef = AFC266A723D85A1C00B56A0A /* CSV */; };
+		AFFD3F5723E46CE1001FCDC1 /* JSONObservationECGTemplate.json in Resources */ = {isa = PBXBuildFile; fileRef = AFFD3F5623E46CE1001FCDC1 /* JSONObservationECGTemplate.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,7 +73,6 @@
 
 /* Begin PBXFileReference section */
 		AF1C459123D6EBF30073C320 /* FHIRConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FHIRConverter.swift; sourceTree = "<group>"; };
-		AF1C459323D6F9750073C320 /* JSONObservationECGTemplate.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = JSONObservationECGTemplate.json; sourceTree = "<group>"; };
 		AF244DAE23D8626000E81FA4 /* Unzipper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unzipper.swift; sourceTree = "<group>"; };
 		AF25226723D70A9B000A2531 /* ServerConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerConnector.swift; sourceTree = "<group>"; };
 		AF403EE023D1B9150025E0A8 /* SwiftCSV.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftCSV.framework; path = Carthage/Build/iOS/SwiftCSV.framework; sourceTree = "<group>"; };
@@ -97,6 +96,7 @@
 		AFA6CF4123CF713F00323206 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFAF74AC23CF7C5900B72981 /* ZipArchive.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ZipArchive.framework; path = Carthage/Build/iOS/ZipArchive.framework; sourceTree = "<group>"; };
 		AFAF74B523CFA3D400B72981 /* CSVImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVImporter.swift; sourceTree = "<group>"; };
+		AFFD3F5623E46CE1001FCDC1 /* JSONObservationECGTemplate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = JSONObservationECGTemplate.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,13 +204,13 @@
 			isa = PBXGroup;
 			children = (
 				AFA6CF3C23CF713F00323206 /* ShareViewController.swift */,
-				AF1C459123D6EBF30073C320 /* FHIRConverter.swift */,
 				AF25226723D70A9B000A2531 /* ServerConnector.swift */,
+				AF1C459123D6EBF30073C320 /* FHIRConverter.swift */,
 				AFAF74B523CFA3D400B72981 /* CSVImporter.swift */,
 				AF244DAE23D8626000E81FA4 /* Unzipper.swift */,
+				AFFD3F5623E46CE1001FCDC1 /* JSONObservationECGTemplate.json */,
 				AFA6CF3E23CF713F00323206 /* MainInterface.storyboard */,
 				AFA6CF4123CF713F00323206 /* Info.plist */,
-				AF1C459323D6F9750073C320 /* JSONObservationECGTemplate.json */,
 			);
 			path = "ECG Workflow Share Extension";
 			sourceTree = "<group>";
@@ -389,8 +389,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF1C459423D6F9750073C320 /* JSONObservationECGTemplate.json in Resources */,
 				AF19705C23E08B25009E38B5 /* Assets.xcassets in Resources */,
+				AFFD3F5723E46CE1001FCDC1 /* JSONObservationECGTemplate.json in Resources */,
 				AFA6CF4023CF713F00323206 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -753,6 +753,7 @@
 		AFA6CF4623CF713F00323206 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZN2U3UB7W5;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -776,6 +777,7 @@
 		AFA6CF4723CF713F00323206 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZN2U3UB7W5;
 				FRAMEWORK_SEARCH_PATHS = (
