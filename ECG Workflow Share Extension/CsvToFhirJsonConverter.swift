@@ -13,22 +13,22 @@ import SwiftyJSON
 
 struct FHIRConverter {
     
-    func getFHIRInstancesFromCSV(allECGs: Array<CSVReader>) -> [FHIRJSON] {
-        var fhirInstances = [FHIRJSON]()
-        for csv in allECGs {
-            let csvAsJSON = convertCSVtoJSON(csv: csv)
-            fhirInstances.append(csvAsJSON!)
+    func getFhirJsonsFromCsvs(ecgsAsCsv: Array<CSVReader>) -> [FHIRJSON] {
+        var ecgsAsFhirJson = [FHIRJSON]()
+        for csv in ecgsAsCsv {
+            let csvAsJson = convertCsvToFhirJson(csv: csv)
+            ecgsAsFhirJson.append(csvAsJson!)
         }
-        return fhirInstances
+        return ecgsAsFhirJson
     }
     
-    func convertCSVtoJSON(csv: CSVReader) -> FHIRJSON? {
-        var template = getJSONTemplate()
+    func convertCsvToFhirJson(csv: CSVReader) -> FHIRJSON? {
+        var template = getFhirJsonEcgObservationTemplate()
         var columnOne = ""
         var columnTwo = ""
         
         while let row = csv.next() {
-            // Skip, if the row has a missing entry
+            // Skip, if the row's value is missing
             if (row.count < 2) {
                 continue
             }
@@ -46,25 +46,42 @@ struct FHIRConverter {
             
             // Extract information and store it in the JSON object
             switch valueOne {
+                
             case "Name":
                 template!["subject"]["display"].string = valueTwo
-                template!["performer"]["display"].string = valueTwo
+                template!["subject"]["reference"].string = valueTwo
+                template!["performer"][0]["display"].string = valueTwo
+                template!["performer"][0]["reference"].string = valueTwo
+
             case "Device":
                 template!["device"]["display"].string = valueTwo
+                
             case "Recorded Date":
                 template!["effectiveDateTime"].string = valueTwo
-            case "Symptoms":
-                template!["note"]["symptoms"].string = valueTwo
+            
+                // TODO Conversion from HZ to ms
+            case "Sample Rate":
+                template!["component"][0]["valueSampledData"]["period"].double = 14.705882352941
+            
             case "Classification":
-                template!["interpretation"]["classification"].string = valueTwo
+                template!["component"][2]["valueString"].string = valueTwo
+            
+            // TODO Catch empty case
+            case "Symptoms":
+                var symptoms = "Symptoms: "
+                for i in 1...row.count-1 {
+                    symptoms = symptoms + row[i] + " "
+                }
+                template!["component"][3]["valueString"].string = symptoms
+                
             default:
                 continue
             }
         }
         
-        // Add both strings holding all the values to the JSON object
-        template!["component"][0]["valueSampledData"]["origin"]["value"].string = columnOne
-        template!["component"][1]["valueSampledData"]["origin"]["value"].string = columnTwo
+        // Add both strings holding all the ECG's data to the JSON object
+        template!["component"][0]["valueSampledData"]["data"].string = columnOne
+        template!["component"][1]["valueSampledData"]["data"].string = columnTwo
         
         do {
             let convertedData = try JSONSerialization.jsonObject(with: template!.rawData(), options: []) as! FHIRJSON
@@ -75,25 +92,12 @@ struct FHIRConverter {
        }
     }
     
-    func getJSONTemplate() -> JSON? {
-        let url = Bundle.main.url(forResource: "JSONObservationECGTemplate", withExtension: "json")!
+    func getFhirJsonEcgObservationTemplate() -> JSON? {
+        let url = Bundle.main.url(forResource: "AppleWatchFhirJsonEcgObservationTemplate", withExtension: "json")!
         let data = NSData(contentsOf: url)! as Data
         
         do {
             let json = try JSON(data: data)
-            return json
-        } catch {
-            print(error)
-            return nil
-        }
-    }
-    
-    func returnDummy() -> FHIRJSON? {
-        let url = Bundle.main.url(forResource: "JSONObservationECGTemplate", withExtension: "json")!
-        let data = NSData(contentsOf: url)! as Data
-        
-        do {
-            let json = try JSONSerialization.jsonObject(with: data, options: []) as! FHIRJSON
             return json
         } catch {
             print(error)

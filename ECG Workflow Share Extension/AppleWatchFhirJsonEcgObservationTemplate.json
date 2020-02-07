@@ -16,31 +16,25 @@
   "code": {
     "coding": [
       {
-        "system": "",
-        "code": "",
-        "display": ""
+        "system": "urn:oid:2.16.840.1.113883.6.24",
+        "code": "131328",
+        "display": "MDC_ECG_ELEC_POTL"
       }
     ]
   },
   "subject": {
-    "reference": "",
-    "display": ""
+    "reference": "subjectR",
+    "display": "subjectN"
   },
-  "effectiveDateTime": "2015-02-19T09:30:35+01:00",
+  "effectiveDateTime": "datetime",
   "performer": [
     {
-      "reference": "",
-      "display": ""
+      "reference": "performerR",
+      "display": "performerN"
     }
   ],
   "device": {
-    "display": ""
-  },
-  "interpretation": {
-      "classification": ""
-  },
-  "note": {
-      "symptoms": ""
+    "display": "device"
   },
   "component": [
     {
@@ -54,11 +48,12 @@
         ]
       },
       "valueSampledData": {
-        "origin": {
-          "value": ""
-        },
         "period": 14.7,
-        "data": ""
+        "dimensions": 1,
+        "origin": {
+          "value": 0
+        },
+        "data": "data"
       }
     },
     {
@@ -72,12 +67,37 @@
         ]
       },
       "valueSampledData": {
-        "origin": {
-          "value": ""
-        },
         "period": 14.7,
-        "data": ""
+        "dimensions": 1,
+        "origin": {
+          "value": 0
+        },
+        "data": "data"
       }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "system": "https://loinc.org",
+            "code": "29308-4",
+            "display": "Diagnosis"
+          }
+        ]
+      },
+      "valueString": "diagnosis"
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "system": "https://loinc.org",
+            "code": "75325-1",
+            "display": "Symptom"
+          }
+        ]
+      },
+      "valueString": "Symptoms"
     }
   ]
 }
