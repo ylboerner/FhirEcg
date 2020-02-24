@@ -75,7 +75,6 @@
 		AF1C459123D6EBF30073C320 /* CsvToFhirJsonConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CsvToFhirJsonConverter.swift; sourceTree = "<group>"; };
 		AF244DAE23D8626000E81FA4 /* Unzipper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unzipper.swift; sourceTree = "<group>"; };
 		AF25226723D70A9B000A2531 /* ServerConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerConnector.swift; sourceTree = "<group>"; };
-		AF403EE023D1B9150025E0A8 /* SwiftCSV.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftCSV.framework; path = Carthage/Build/iOS/SwiftCSV.framework; sourceTree = "<group>"; };
 		AF547C5623EDCC400055FC31 /* FhirJsonToObservationConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FhirJsonToObservationConverter.swift; sourceTree = "<group>"; };
 		AF547C5A23EDCDD20055FC31 /* EcgManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcgManager.swift; sourceTree = "<group>"; };
 		AFA6CF0323CF707700323206 /* ECG Workflow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ECG Workflow.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,7 +95,6 @@
 		AFA6CF3C23CF713F00323206 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		AFA6CF3F23CF713F00323206 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		AFA6CF4123CF713F00323206 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AFAF74AC23CF7C5900B72981 /* ZipArchive.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ZipArchive.framework; path = Carthage/Build/iOS/ZipArchive.framework; sourceTree = "<group>"; };
 		AFAF74B523CFA3D400B72981 /* CsvImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CsvImporter.swift; sourceTree = "<group>"; };
 		AFFD3F5623E46CE1001FCDC1 /* AppleWatchFhirJsonEcgObservationTemplate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AppleWatchFhirJsonEcgObservationTemplate.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -145,7 +143,6 @@
 				AFA6CF2723CF707D00323206 /* ECG WorkflowUITests */,
 				AFA6CF3B23CF713F00323206 /* ECG Workflow Share Extension */,
 				AFA6CF0423CF707700323206 /* Products */,
-				AFAF748B23CF75BE00B72981 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -215,15 +212,6 @@
 				AFA6CF4123CF713F00323206 /* Info.plist */,
 			);
 			path = "ECG Workflow Share Extension";
-			sourceTree = "<group>";
-		};
-		AFAF748B23CF75BE00B72981 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				AF403EE023D1B9150025E0A8 /* SwiftCSV.framework */,
-				AFAF74AC23CF7C5900B72981 /* ZipArchive.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
