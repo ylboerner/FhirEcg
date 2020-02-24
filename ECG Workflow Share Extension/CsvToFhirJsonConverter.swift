@@ -36,13 +36,6 @@ struct CsvToFhirJsonConverter {
             let key = row[0]
             let value = row[1]
             
-            // Check if both are integers. If so, concatenate them with the string holding all the values and continue the loop
-            if (Int(key) != nil && Int(value) != nil) {
-                let value = Float(key + "." + value)
-                measurements = measurements + String(value!) + " "
-                continue
-            }
-            
             // Extract information and store it in the JSON object
             switch key {
                 
@@ -66,9 +59,19 @@ struct CsvToFhirJsonConverter {
             
             // TODO Catch empty case
             case "Symptoms":
-                template!["component"][2]["valueString"].string = getSymptomsFromRow(row: row)
+                if value.isEmpty {
+                    // No symptoms found, delete symptoms component from observation
+                    template!["component"].arrayObject?.remove(at: 2)
+                } else {
+                    template!["component"][2]["valueString"].string = getSymptomsFromRow(row: row)
+                }
                 
             default:
+                // Check if both key and value are integers. If so, concatenate them with the string holding all the values
+                if (Int(key) != nil && Int(value) != nil) {
+                    let value = Float(key + "." + value)
+                    measurements = measurements + String(value!) + " "
+                }
                 continue
             }
         }
