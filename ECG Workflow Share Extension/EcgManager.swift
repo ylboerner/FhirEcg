@@ -30,7 +30,7 @@ struct EcgManager {
         // Convert ecgs in FHIR JSON to observations
         let converter = FhirJsonToObservationConverter()
         let observations = converter.convertFhirJsonsToObservations(ecgsInFhirJson: ecgsInFhirJson)
-        //dump(ecgsInFhirJson[0])
+        dump(ecgsInFhirJson[0])
         
         // Send ecgs to server
         //let serverconnector = ServerConnector()

@@ -27,53 +27,46 @@ struct CsvToFhirJsonConverter {
         var measurements = ""
         
         while let row = csv.next() {
-            // Skip, if the row's value is missing
+            // Skip, if there are missing values in the row
             if (row.count < 2) {
                 continue
             }
             
-            // Extract both values
-            let valueOne = row[0]
-            let valueTwo = row[1]
+            // Extract key and value
+            let key = row[0]
+            let value = row[1]
             
             // Check if both are integers. If so, concatenate them with the string holding all the values and continue the loop
-            if (Int(valueOne) != nil && Int(valueTwo) != nil) {
-                let value = Float(valueOne + "." + valueTwo)
+            if (Int(key) != nil && Int(value) != nil) {
+                let value = Float(key + "." + value)
                 measurements = measurements + String(value!) + " "
                 continue
             }
             
             // Extract information and store it in the JSON object
-            switch valueOne {
+            switch key {
                 
             case "Name":
-                template!["subject"]["display"].string = valueTwo
-                template!["subject"]["reference"].string = valueTwo
-                template!["performer"][0]["display"].string = valueTwo
-                template!["performer"][0]["reference"].string = valueTwo
+                template!["subject"]["display"].string = value
+                template!["subject"]["reference"].string = value
+                template!["performer"][0]["display"].string = value
+                template!["performer"][0]["reference"].string = value
 
             case "Device":
-                template!["device"]["display"].string = valueTwo
+                template!["device"]["display"].string = value
                 
             case "Recorded Date":
-                template!["effectiveDateTime"].string = valueTwo
+                template!["effectiveDateTime"].string = value
             
             case "Sample Rate":
-                // TODO
-                // Read in proper Hz
-                // Conversion from Hz to ms
-                template!["component"][0]["valueSampledData"]["period"].double = 14.705882352941
+                template!["component"][0]["valueSampledData"]["period"].double = getPeriodFromRow(row: row)
             
             case "Classification":
-                template!["component"][1]["valueString"].string = valueTwo
+                template!["component"][1]["valueString"].string = value
             
             // TODO Catch empty case
             case "Symptoms":
-                var symptoms = "Symptoms: "
-                for i in 1...row.count-1 {
-                    symptoms = symptoms + row[i] + " "
-                }
-                template!["component"][2]["valueString"].string = symptoms
+                template!["component"][2]["valueString"].string = getSymptomsFromRow(row: row)
                 
             default:
                 continue
@@ -92,7 +85,25 @@ struct CsvToFhirJsonConverter {
        }
     }
     
-    func getFhirJsonEcgObservationTemplate() -> JSON? {
+    private func getPeriodFromRow(row: [String]) -> Double {
+        let valueOne = row[1]
+        let valueTwo = row[2]
+        let hz = Double(valueOne.westernArabicNumeralsOnly + "." + valueTwo.westernArabicNumeralsOnly)
+        
+        // Formula converting hz to period in ms
+        let ms = 1/hz! * 1000
+        return ms
+    }
+    
+    private func getSymptomsFromRow(row: [String]) -> String {
+        var symptoms = "Symptoms: "
+        for i in 1...row.count-1 {
+            symptoms = symptoms + row[i] + " "
+        }
+        return symptoms
+    }
+    
+    private func getFhirJsonEcgObservationTemplate() -> JSON? {
         let url = Bundle.main.url(forResource: "AppleWatchFhirJsonEcgObservationTemplate", withExtension: "json")!
         let data = NSData(contentsOf: url)! as Data
         
@@ -103,5 +114,13 @@ struct CsvToFhirJsonConverter {
             print(error)
             return nil
         }
+    }
+}
+
+extension String {
+    var westernArabicNumeralsOnly: String {
+        let pattern = UnicodeScalar("0")..."9"
+        return String(unicodeScalars
+            .compactMap { pattern ~= $0 ? Character($0) : nil })
     }
 }
