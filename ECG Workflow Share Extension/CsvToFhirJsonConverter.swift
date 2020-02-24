@@ -11,7 +11,7 @@ import SMART
 import CSV
 import SwiftyJSON
 
-struct FHIRConverter {
+struct CsvToFhirJsonConverter {
     
     func getFhirJsonsFromCsvs(ecgsAsCsv: Array<CSVReader>) -> [FHIRJSON] {
         var ecgsAsFhirJson = [FHIRJSON]()
@@ -24,8 +24,7 @@ struct FHIRConverter {
     
     func convertCsvToFhirJson(csv: CSVReader) -> FHIRJSON? {
         var template = getFhirJsonEcgObservationTemplate()
-        var columnOne = ""
-        var columnTwo = ""
+        var measurements = ""
         
         while let row = csv.next() {
             // Skip, if the row's value is missing
@@ -39,8 +38,8 @@ struct FHIRConverter {
             
             // Check if both are integers. If so, concatenate them with the string holding all the values and continue the loop
             if (Int(valueOne) != nil && Int(valueTwo) != nil) {
-                columnOne = columnOne + valueOne + " "
-                columnTwo = columnTwo + valueTwo + " "
+                let value = Float(valueOne + "." + valueTwo)
+                measurements = measurements + String(value!) + " "
                 continue
             }
             
@@ -59,12 +58,14 @@ struct FHIRConverter {
             case "Recorded Date":
                 template!["effectiveDateTime"].string = valueTwo
             
-                // TODO Conversion from HZ to ms
             case "Sample Rate":
+                // TODO
+                // Read in proper Hz
+                // Conversion from Hz to ms
                 template!["component"][0]["valueSampledData"]["period"].double = 14.705882352941
             
             case "Classification":
-                template!["component"][2]["valueString"].string = valueTwo
+                template!["component"][1]["valueString"].string = valueTwo
             
             // TODO Catch empty case
             case "Symptoms":
@@ -72,7 +73,7 @@ struct FHIRConverter {
                 for i in 1...row.count-1 {
                     symptoms = symptoms + row[i] + " "
                 }
-                template!["component"][3]["valueString"].string = symptoms
+                template!["component"][2]["valueString"].string = symptoms
                 
             default:
                 continue
@@ -80,8 +81,7 @@ struct FHIRConverter {
         }
         
         // Add both strings holding all the ECG's data to the JSON object
-        template!["component"][0]["valueSampledData"]["data"].string = columnOne
-        template!["component"][1]["valueSampledData"]["data"].string = columnTwo
+        template!["component"][0]["valueSampledData"]["data"].string = measurements
         
         do {
             let convertedData = try JSONSerialization.jsonObject(with: template!.rawData(), options: []) as! FHIRJSON

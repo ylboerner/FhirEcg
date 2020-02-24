@@ -5,7 +5,7 @@
 //  Created by Yannick Börner on 21.01.20.
 //  Copyright © 2020 Berlin Institute of Health. All rights reserved.
 //
-/*
+
 import Foundation
 import SMART
 
@@ -14,8 +14,9 @@ class ServerConnector {
     var smartConnection: Client
     
     init() {
+        // Establish a connection to the server
         smartConnection = Client(
-            baseURL: URL(string: "https://fhir-api-dstu2.smarthealthit.org")!,
+            baseURL: URL(string: "http://localhost:8080")!,
             settings: [
                 //"client_id": "my_mobile_app",       // if you have one
                 "redirect": "smartapp://callback",    // must be registered
@@ -23,31 +24,22 @@ class ServerConnector {
         )
     }
     
-    func sendDatatoServer() {
-        // authorize, then search for prescriptions
-        smartConnection.authorize() { patient, error in
-            if nil != error || nil == patient {
-                // report error
+    func sendObservationsToServer(observations: [Observation]) {
+        smartConnection.ready() { error in
+            if nil != error {
+                print("Connection to the server couldn't be established properly")
             }
             else {
-                /*
-                MedicationOrder.search(["patient": patient.id])
-                .perform(smartConnection.server) { bundle, error in
-                    if nil != error {
-                        // report error
-                    }
-                    else {
-                        let meds = bundle?.entry?
-                            .filter() { return $0.resource is MedicationOrder }
-                            .map() { return $0.resource as! MedicationOrder }
-                        
-                        // now `meds` holds all known patient prescriptions
+                for observation in observations {
+                    observation.create(self.smartConnection.server) { error in
+                        if nil != error {
+                            print("Failing during sending")
+                        } else {
+                            print("Observation successfully sent!")
+                        }
                     }
                 }
- */
             }
         }
     }
-
 }
- */

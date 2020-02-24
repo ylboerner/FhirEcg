@@ -16,7 +16,7 @@ import SMART
 
 class ShareViewController: UIViewController {
     
-    var relativePathToZip: String!
+    var pathToZip: String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,31 +27,8 @@ class ShareViewController: UIViewController {
     }
     
     @IBAction func shareData(_ sender: UIButton) {
-        unzipExport()
-        let ecgsInCSVFormat = getCSVsFromUnzippedExport()
-        if ecgsInCSVFormat.count == 0 {
-            // All the ECGs have been previously imported
-            return
-        }
-        let ecgsInFHIRFormat = convertCSVsToFHIR(arrayWithCSVs: ecgsInCSVFormat)
-        print("Done")
-    }
-    
-    private func convertCSVsToFHIR(arrayWithCSVs: Array<CSVReader>) -> Array<FHIRJSON> {
-        let converter = FHIRConverter()
-        let ecgsAsFHIR = converter.getFHIRInstancesFromCSV(allECGs: arrayWithCSVs)
-        return ecgsAsFHIR
-    }
-    
-    private func getCSVsFromUnzippedExport() -> Array<CSVReader> {
-        let importer = CSVImporter()
-        let arrayWithCSVs = importer.getCSVs()
-        return arrayWithCSVs
-    }
-    
-    private func unzipExport() {
-        let unzipper = Unzipper()
-        unzipper.unzipFile(relativePathToZip: relativePathToZip)
+        let ecgManager = EcgManager()
+        ecgManager.sendEcgsToServer(pathToZip: pathToZip)
     }
     
     private func getURLOfExportedZip() {
@@ -66,7 +43,7 @@ class ShareViewController: UIViewController {
                 guard let url = item as? NSURL else { return }
                 //print("\(item.debugDescription)")
                 OperationQueue.main.addOperation {
-                    self.relativePathToZip = url.relativePath
+                    self.pathToZip = url.relativePath
                 }
             })
         } else {
@@ -74,6 +51,7 @@ class ShareViewController: UIViewController {
         }
     }
     
+    /*
     private func showAlert() {
         let alert = UIAlertController(title: "Alert", message: "Message", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
@@ -91,4 +69,5 @@ class ShareViewController: UIViewController {
         }}))
         self.present(alert, animated: true, completion: nil)
     }
+    */
 }

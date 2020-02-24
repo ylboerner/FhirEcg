@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		AF19705C23E08B25009E38B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFA6CF0C23CF707C00323206 /* Assets.xcassets */; };
-		AF1C459223D6EBF30073C320 /* FHIRConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1C459123D6EBF30073C320 /* FHIRConverter.swift */; };
+		AF1C459223D6EBF30073C320 /* CsvToFhirJsonConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1C459123D6EBF30073C320 /* CsvToFhirJsonConverter.swift */; };
 		AF244DAF23D8626000E81FA4 /* Unzipper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF244DAE23D8626000E81FA4 /* Unzipper.swift */; };
 		AF244DB223D9828600E81FA4 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = AF244DB123D9828600E81FA4 /* SwiftyJSON */; };
 		AF244DB423D9A8F600E81FA4 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFA6CF3E23CF713F00323206 /* MainInterface.storyboard */; };
 		AF25226823D70A9C000A2531 /* ServerConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF25226723D70A9B000A2531 /* ServerConnector.swift */; };
-		AF403EE223D1B92A0025E0A8 /* SwiftCSV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF403EE023D1B9150025E0A8 /* SwiftCSV.framework */; };
+		AF2D50492403B99A00553F24 /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = AF2D50482403B99A00553F24 /* ZIPFoundation */; };
+		AF547C5723EDCC400055FC31 /* FhirJsonToObservationConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF547C5623EDCC400055FC31 /* FhirJsonToObservationConverter.swift */; };
+		AF547C5B23EDCDD20055FC31 /* EcgManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF547C5A23EDCDD20055FC31 /* EcgManager.swift */; };
 		AFA6CF0723CF707700323206 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA6CF0623CF707700323206 /* AppDelegate.swift */; };
 		AFA6CF0923CF707700323206 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA6CF0823CF707700323206 /* SceneDelegate.swift */; };
 		AFA6CF0B23CF707700323206 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA6CF0A23CF707700323206 /* ContentView.swift */; };
@@ -25,12 +27,10 @@
 		AFA6CF3D23CF713F00323206 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA6CF3C23CF713F00323206 /* ShareViewController.swift */; };
 		AFA6CF4023CF713F00323206 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFA6CF3E23CF713F00323206 /* MainInterface.storyboard */; };
 		AFA6CF4423CF713F00323206 /* ECG Workflow Share Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AFA6CF3A23CF713F00323206 /* ECG Workflow Share Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		AFAF74B223CFA04F00B72981 /* ZipArchive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFAF74AC23CF7C5900B72981 /* ZipArchive.framework */; };
-		AFAF74B323CFA0F500B72981 /* ZipArchive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFAF74AC23CF7C5900B72981 /* ZipArchive.framework */; };
-		AFAF74B623CFA3D400B72981 /* CSVImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAF74B523CFA3D400B72981 /* CSVImporter.swift */; };
+		AFAF74B623CFA3D400B72981 /* CsvImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAF74B523CFA3D400B72981 /* CsvImporter.swift */; };
 		AFC266A523D738B000B56A0A /* SMART in Frameworks */ = {isa = PBXBuildFile; productRef = AFC266A423D738B000B56A0A /* SMART */; };
 		AFC266A823D85A1C00B56A0A /* CSV in Frameworks */ = {isa = PBXBuildFile; productRef = AFC266A723D85A1C00B56A0A /* CSV */; };
-		AFFD3F5723E46CE1001FCDC1 /* JSONObservationECGTemplate.json in Resources */ = {isa = PBXBuildFile; fileRef = AFFD3F5623E46CE1001FCDC1 /* JSONObservationECGTemplate.json */; };
+		AFFD3F5723E46CE1001FCDC1 /* AppleWatchFhirJsonEcgObservationTemplate.json in Resources */ = {isa = PBXBuildFile; fileRef = AFFD3F5623E46CE1001FCDC1 /* AppleWatchFhirJsonEcgObservationTemplate.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,10 +72,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		AF1C459123D6EBF30073C320 /* FHIRConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FHIRConverter.swift; sourceTree = "<group>"; };
+		AF1C459123D6EBF30073C320 /* CsvToFhirJsonConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CsvToFhirJsonConverter.swift; sourceTree = "<group>"; };
 		AF244DAE23D8626000E81FA4 /* Unzipper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unzipper.swift; sourceTree = "<group>"; };
 		AF25226723D70A9B000A2531 /* ServerConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerConnector.swift; sourceTree = "<group>"; };
 		AF403EE023D1B9150025E0A8 /* SwiftCSV.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftCSV.framework; path = Carthage/Build/iOS/SwiftCSV.framework; sourceTree = "<group>"; };
+		AF547C5623EDCC400055FC31 /* FhirJsonToObservationConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FhirJsonToObservationConverter.swift; sourceTree = "<group>"; };
+		AF547C5A23EDCDD20055FC31 /* EcgManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcgManager.swift; sourceTree = "<group>"; };
 		AFA6CF0323CF707700323206 /* ECG Workflow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ECG Workflow.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFA6CF0623CF707700323206 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFA6CF0823CF707700323206 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,8 +97,8 @@
 		AFA6CF3F23CF713F00323206 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		AFA6CF4123CF713F00323206 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFAF74AC23CF7C5900B72981 /* ZipArchive.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ZipArchive.framework; path = Carthage/Build/iOS/ZipArchive.framework; sourceTree = "<group>"; };
-		AFAF74B523CFA3D400B72981 /* CSVImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVImporter.swift; sourceTree = "<group>"; };
-		AFFD3F5623E46CE1001FCDC1 /* JSONObservationECGTemplate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = JSONObservationECGTemplate.json; sourceTree = "<group>"; };
+		AFAF74B523CFA3D400B72981 /* CsvImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CsvImporter.swift; sourceTree = "<group>"; };
+		AFFD3F5623E46CE1001FCDC1 /* AppleWatchFhirJsonEcgObservationTemplate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AppleWatchFhirJsonEcgObservationTemplate.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +106,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFAF74B323CFA0F500B72981 /* ZipArchive.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,10 +128,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFC266A523D738B000B56A0A /* SMART in Frameworks */,
-				AFAF74B223CFA04F00B72981 /* ZipArchive.framework in Frameworks */,
-				AF403EE223D1B92A0025E0A8 /* SwiftCSV.framework in Frameworks */,
 				AF244DB223D9828600E81FA4 /* SwiftyJSON in Frameworks */,
 				AFC266A823D85A1C00B56A0A /* CSV in Frameworks */,
+				AF2D50492403B99A00553F24 /* ZIPFoundation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,11 +204,13 @@
 			isa = PBXGroup;
 			children = (
 				AFA6CF3C23CF713F00323206 /* ShareViewController.swift */,
+				AF547C5A23EDCDD20055FC31 /* EcgManager.swift */,
 				AF25226723D70A9B000A2531 /* ServerConnector.swift */,
-				AF1C459123D6EBF30073C320 /* FHIRConverter.swift */,
-				AFAF74B523CFA3D400B72981 /* CSVImporter.swift */,
+				AF547C5623EDCC400055FC31 /* FhirJsonToObservationConverter.swift */,
+				AF1C459123D6EBF30073C320 /* CsvToFhirJsonConverter.swift */,
+				AFAF74B523CFA3D400B72981 /* CsvImporter.swift */,
 				AF244DAE23D8626000E81FA4 /* Unzipper.swift */,
-				AFFD3F5623E46CE1001FCDC1 /* JSONObservationECGTemplate.json */,
+				AFFD3F5623E46CE1001FCDC1 /* AppleWatchFhirJsonEcgObservationTemplate.json */,
 				AFA6CF3E23CF713F00323206 /* MainInterface.storyboard */,
 				AFA6CF4123CF713F00323206 /* Info.plist */,
 			);
@@ -235,7 +237,6 @@
 				AFA6CF0023CF707700323206 /* Frameworks */,
 				AFA6CF0123CF707700323206 /* Resources */,
 				AFA6CF4823CF713F00323206 /* Embed App Extensions */,
-				AFAF74B423CFA1DB00B72981 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -302,6 +303,7 @@
 				AFC266A423D738B000B56A0A /* SMART */,
 				AFC266A723D85A1C00B56A0A /* CSV */,
 				AF244DB123D9828600E81FA4 /* SwiftyJSON */,
+				AF2D50482403B99A00553F24 /* ZIPFoundation */,
 			);
 			productName = "ECG Workflow Share Extension";
 			productReference = AFA6CF3A23CF713F00323206 /* ECG Workflow Share Extension.appex */;
@@ -346,6 +348,7 @@
 				AFC266A323D738B000B56A0A /* XCRemoteSwiftPackageReference "Swift-SMART" */,
 				AFC266A623D85A1C00B56A0A /* XCRemoteSwiftPackageReference "CSV" */,
 				AF244DB023D9828600E81FA4 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				AF2D50472403B99A00553F24 /* XCRemoteSwiftPackageReference "ZIPFoundation" */,
 			);
 			productRefGroup = AFA6CF0423CF707700323206 /* Products */;
 			projectDirPath = "";
@@ -390,36 +393,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF19705C23E08B25009E38B5 /* Assets.xcassets in Resources */,
-				AFFD3F5723E46CE1001FCDC1 /* JSONObservationECGTemplate.json in Resources */,
+				AFFD3F5723E46CE1001FCDC1 /* AppleWatchFhirJsonEcgObservationTemplate.json in Resources */,
 				AFA6CF4023CF713F00323206 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		AFAF74B423CFA1DB00B72981 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/ZipArchive.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/SwiftCSV.framework",
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(SRCROOT)/Carthage/Checkouts/ZipArchive",
-				"$(SRCROOT)/Carthage/Checkouts/SwiftCSV.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AFA6CEFF23CF707700323206 /* Sources */ = {
@@ -454,9 +433,11 @@
 			files = (
 				AFA6CF3D23CF713F00323206 /* ShareViewController.swift in Sources */,
 				AF244DAF23D8626000E81FA4 /* Unzipper.swift in Sources */,
-				AFAF74B623CFA3D400B72981 /* CSVImporter.swift in Sources */,
+				AF547C5B23EDCDD20055FC31 /* EcgManager.swift in Sources */,
+				AFAF74B623CFA3D400B72981 /* CsvImporter.swift in Sources */,
+				AF547C5723EDCC400055FC31 /* FhirJsonToObservationConverter.swift in Sources */,
 				AF25226823D70A9C000A2531 /* ServerConnector.swift in Sources */,
-				AF1C459223D6EBF30073C320 /* FHIRConverter.swift in Sources */,
+				AF1C459223D6EBF30073C320 /* CsvToFhirJsonConverter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,6 +484,7 @@
 		AFA6CF2B23CF707D00323206 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -534,6 +516,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = ZN2U3UB7W5;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = "";
@@ -564,6 +547,7 @@
 		AFA6CF2C23CF707D00323206 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -595,6 +579,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = ZN2U3UB7W5;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = "";
@@ -857,6 +842,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		AF2D50472403B99A00553F24 /* XCRemoteSwiftPackageReference "ZIPFoundation" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/weichsel/ZIPFoundation";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.10;
+			};
+		};
 		AFC266A323D738B000B56A0A /* XCRemoteSwiftPackageReference "Swift-SMART" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/smart-on-fhir/Swift-SMART";
@@ -880,6 +873,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AF244DB023D9828600E81FA4 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
 			productName = SwiftyJSON;
+		};
+		AF2D50482403B99A00553F24 /* ZIPFoundation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AF2D50472403B99A00553F24 /* XCRemoteSwiftPackageReference "ZIPFoundation" */;
+			productName = ZIPFoundation;
 		};
 		AFC266A423D738B000B56A0A /* SMART */ = {
 			isa = XCSwiftPackageProductDependency;

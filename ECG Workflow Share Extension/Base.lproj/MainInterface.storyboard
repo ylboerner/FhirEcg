@@ -31,7 +31,7 @@
                                     <action selector="shareData:" destination="j1y-V4-xli" eventType="touchUpInside" id="XtK-Zc-ihI"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="1-01-transparent-cropped" translatesAutoresizingMaskIntoConstraints="NO" id="nOe-5W-BNr">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="1-01-transparent-cropped" translatesAutoresizingMaskIntoConstraints="NO" id="nOe-5W-BNr">
                                 <rect key="frame" x="69" y="315" width="277" height="267"/>
                             </imageView>
                         </subviews>

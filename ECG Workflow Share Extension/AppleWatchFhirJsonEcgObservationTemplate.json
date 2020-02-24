@@ -60,25 +60,6 @@
       "code": {
         "coding": [
           {
-            "system": "http://unitsofmeasure.org",
-            "code": "uV",
-            "display": "microvolt"
-          }
-        ]
-      },
-      "valueSampledData": {
-        "period": 14.7,
-        "dimensions": 1,
-        "origin": {
-          "value": 0
-        },
-        "data": "data"
-      }
-    },
-    {
-      "code": {
-        "coding": [
-          {
             "system": "https://loinc.org",
             "code": "29308-4",
             "display": "Diagnosis"

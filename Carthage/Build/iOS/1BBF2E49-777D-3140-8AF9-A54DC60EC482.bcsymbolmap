@@ -647,8 +647,8 @@ $sSJs20TextOutputStreamablessAAP5write2toyqd__z_ts0aB6StreamRd__lFTWs26DefaultSt
 isNewline.get
 SwiftCSV/String+Lines.swift
 /Users/yannickborner/PlayGround/ECG Workflow/Carthage/Checkouts/SwiftCSV/SwiftCSV/String+Lines.swift
-Apple clang version 11.0.0 (clang-1100.0.33.16)
-/Users/yannickborner/Library/Caches/org.carthage.CarthageKit/DerivedData/11.3_11C29/SwiftCSV/0.5.5/Build/Intermediates.noindex/ArchiveIntermediates/SwiftCSV-iOS/IntermediateBuildFilesPath/SwiftCSV.build/Release-iphoneos/SwiftCSV.build/DerivedSources/SwiftCSV_vers.c
+Apple clang version 11.0.0 (clang-1100.0.33.17)
+/Users/yannickborner/Library/Caches/org.carthage.CarthageKit/DerivedData/11.3.1_11C504/SwiftCSV/0.5.5/Build/Intermediates.noindex/ArchiveIntermediates/SwiftCSV-iOS/IntermediateBuildFilesPath/SwiftCSV.build/Release-iphoneos/SwiftCSV.build/DerivedSources/SwiftCSV_vers.c
 __ZL15__ARCLite__loadv
 __ZL30add_image_hook_autoreleasepoolPK11mach_headerl
 __ZL34__arclite_objc_autoreleasePoolPushv

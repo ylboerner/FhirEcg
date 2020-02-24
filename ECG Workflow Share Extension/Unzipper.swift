@@ -7,16 +7,40 @@
 //
 
 import Foundation
-import ZipArchive
+import ZIPFoundation
 
 struct Unzipper {
     
-    func unzipFile(relativePathToZip: String) {
-        // This apps own document folder
-        let documentsURL: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        let relativePathToDocuments = documentsURL.relativePath
+    let fileManager = FileManager()
+    let appBundleDocumentsUrl: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+    
+    func unzipFile(pathToZip: String) {
+        // Clean up previous exports
+        deletePreviousExports()
         
-        // Unzip the export into this apps document folder. Will evaluate to false or nil if unsuccessful
-        let unzip: Void? = try? SSZipArchive.unzipFile(atPath: relativePathToZip, toDestination: relativePathToDocuments, overwrite: true, password: nil)
+        // Unzip archive
+        do {
+            try fileManager.unzipItem(at: URL(fileURLWithPath: pathToZip), to: appBundleDocumentsUrl)
+        } catch {
+            print("Extraction of ZIP archive failed with error:\(error)")
+        }
+    }
+    
+    private func deletePreviousExports() {
+        let pathToPreviousExport = appBundleDocumentsUrl.appendingPathComponent("apple_health_export")
+    
+        do {
+            try fileManager.removeItem(at: pathToPreviousExport)
+        } catch {
+            print("No previous exports were found")
+        }
+    }
+    
+    // For debugging purposes
+    private func printContentsOfDirectory(directory: URL) {
+        if let allItems = try? FileManager.default.contentsOfDirectory(atPath: directory.relativePath) {
+            print("Directory: " + directory.relativePath + "contains the following files:")
+            print(allItems)
+        }
     }
 }

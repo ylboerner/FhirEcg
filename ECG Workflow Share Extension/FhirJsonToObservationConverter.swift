@@ -7,3 +7,20 @@
 //
 
 import Foundation
+import SMART
+
+struct FhirJsonToObservationConverter {
+    
+    func convertFhirJsonsToObservations(ecgsInFhirJson: Array<FHIRJSON>) -> Array<Observation> {
+        var observations = [Observation]()
+        for ecgInFHIRJSON in ecgsInFhirJson {
+            do {
+                let observation = try Observation(json: ecgInFHIRJSON)
+                observations.append(observation)
+            } catch {
+                print(error)
+            }
+        }
+        return observations
+    }
+}

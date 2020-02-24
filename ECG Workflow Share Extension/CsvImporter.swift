@@ -9,7 +9,7 @@
 import Foundation
 import CSV
 
-struct CSVImporter {
+struct CsvImporter {
     
     let defaults = UserDefaults.standard
 
