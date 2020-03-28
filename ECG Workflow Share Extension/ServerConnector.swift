@@ -16,24 +16,25 @@ class ServerConnector {
     init() {
         // Establish a connection to the server
         smartConnection = Client(
-            baseURL: URL(string: "http://localhost:8080")!,
+            // Change this URL in order to send data to another server
+            baseURL: URL(string: "https://vonk-server.azurewebsites.net/")!,
             settings: [
-                //"client_id": "my_mobile_app",       // if you have one
+                "client_id": "ECG Workflow app BIH",       // if you have one
                 "redirect": "smartapp://callback",    // must be registered
             ]
         )
     }
     
-    func sendObservationsToServer(observations: [Observation]) {
+    func sendObservationsToServer(observations: [EcgObservation]) {
         smartConnection.ready() { error in
             if nil != error {
                 print("Could not connect to the server.")
             }
             else {
                 for observation in observations {
-                    observation.create(self.smartConnection.server) { error in
+                    observation.smartObservation!.create(self.smartConnection.server) { error in
                         if nil != error {
-                            print("Failing during sending.")
+                            print("Failure during sending.")
                         } else {
                             print("Observation successfully sent.")
                         }

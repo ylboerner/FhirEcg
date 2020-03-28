@@ -31,13 +31,14 @@ struct EcgManager {
         // Parse ecgs
         let ecgObservations = getEcgObservations(parsedCsvs: parsedCsvs)
         
-        // Pan Tompkins
+        // Pan Tompkins Implementation
+        // Currently commented out until a new digital filter has been created and implemented
         //let adapter = PanTompkinsAdapter()
         //adapter.pan()
         
         // Send ecgs to server
-        //let serverconnector = ServerConnector()
-        //serverconnector.sendObservationsToServer(observations: observations)
+        let serverconnector = ServerConnector()
+        serverconnector.sendObservationsToServer(observations: ecgObservations)
         
         print("Done")
     }
