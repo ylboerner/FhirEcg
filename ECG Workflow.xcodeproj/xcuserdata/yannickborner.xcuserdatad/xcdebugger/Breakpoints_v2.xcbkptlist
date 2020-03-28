@@ -7,15 +7,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "2BDA26C0-DDAC-4B44-A92C-8F6FE3F09494"
-            shouldBeEnabled = "No"
+            uuid = "7D75D72B-9EF2-4235-B046-0E7FFD163C26"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ECG Workflow Share Extension/EcgManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
             landmarkName = "sendEcgsToServer(pathToZip:)"
             landmarkType = "7">
          </BreakpointContent>

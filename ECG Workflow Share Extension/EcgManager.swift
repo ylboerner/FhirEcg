@@ -9,28 +9,31 @@
 import Foundation
 import CSV
 import SMART
-
-// This is where all the magic happens
+import SwiftyJSON
 
 struct EcgManager {
         
     func sendEcgsToServer(pathToZip: String) {
-        unzipExport(pathToZip: pathToZip)
+        let unzipper = Unzipper()
+        unzipper.unzipFile(pathToZip: pathToZip)
         
         // Check whether there are new ecgs
-        let ecgsAsCsv = getCSVsFromUnzippedExport()
-        if ecgsAsCsv.count == 0 {
+        let csvs = getCSVsFromUnzippedExport()
+        if csvs.count == 0 {
+            print("No ecgs")
             // All the ECGs have been previously imported
             return
         }
         
-        // Convert ecgs to FHIR Json
-        let ecgsInFhirJson = convertCSVsToFHIR(ecgsAsCSV: ecgsAsCsv)
-            
-        // Convert ecgs in FHIR JSON to observations
-        let converter = FhirJsonToObservationConverter()
-        let observations = converter.convertFhirJsonsToObservations(ecgsInFhirJson: ecgsInFhirJson)
-        dump(ecgsInFhirJson[0])
+        // Parse csvs
+        let parsedCsvs = getParsedCsvs(csvs: csvs)
+        
+        // Parse ecgs
+        let ecgObservations = getEcgObservations(parsedCsvs: parsedCsvs)
+        
+        // Pan Tompkins
+        //let adapter = PanTompkinsAdapter()
+        //adapter.pan()
         
         // Send ecgs to server
         //let serverconnector = ServerConnector()
@@ -38,11 +41,25 @@ struct EcgManager {
         
         print("Done")
     }
-        
-    private func convertCSVsToFHIR(ecgsAsCSV: Array<CSVReader>) -> Array<FHIRJSON> {
-        let converter = CsvToFhirJsonConverter()
-        let ecgsAsFHIR = converter.getFhirJsonsFromCsvs(ecgsAsCsv: ecgsAsCSV)
-        return ecgsAsFHIR
+    
+    private func getEcgObservations(parsedCsvs: Array<CsvParser>) -> Array<EcgObservation> {
+        var ecgObservations = Array<EcgObservation>()
+        for parsedCsv in parsedCsvs {
+            let ecgObservation = EcgObservation(data: parsedCsv)
+            ecgObservations.append(ecgObservation)
+            //writeToFile(json: ecgObservation.fhirObservation, date: ecgObservation.ecgData.date!)
+            //print(ecgObservation.fhirObservation)
+        }
+        return ecgObservations
+    }
+    
+    private func getParsedCsvs(csvs: Array<CSVReader>) -> Array<CsvParser> {
+        var parsedCsvs = Array<CsvParser>()
+        for csv in csvs {
+            let csvData = CsvParser(csv: csv)
+            parsedCsvs.append(csvData)
+        }
+        return parsedCsvs
     }
     
     private func getCSVsFromUnzippedExport() -> Array<CSVReader> {
@@ -51,8 +68,16 @@ struct EcgManager {
         return arrayWithCSVs
     }
     
-    private func unzipExport(pathToZip: String) {
-        let unzipper = Unzipper()
-        unzipper.unzipFile(pathToZip: pathToZip)
+    private func writeToFile(json: JSON?, date: String) {
+        if let encodedData = try? JSONEncoder().encode(json) {
+            var downloadsDirectory = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask).first!
+            downloadsDirectory = downloadsDirectory.appendingPathComponent(date)
+            do {
+                try encodedData.write(to: downloadsDirectory)
+            }
+            catch {
+                print("Failed to write JSON data: \(error.localizedDescription)")
+            }
+        }
     }
 }

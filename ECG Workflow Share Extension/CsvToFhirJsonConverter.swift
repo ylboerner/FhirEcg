@@ -6,6 +6,8 @@
 //  Copyright © 2020 Berlin Institute of Health. All rights reserved.
 //
 
+/*
+
 import Foundation
 import SMART
 import CSV
@@ -24,7 +26,7 @@ struct CsvToFhirJsonConverter {
     
     func convertCsvToFhirJson(csv: CSVReader) -> FHIRJSON? {
         var template = getFhirJsonEcgObservationTemplate()
-        var measurements = ""
+        var measurements = [Float]()
         
         while let row = csv.next() {
             // Skip, if there are missing values in the row
@@ -70,14 +72,15 @@ struct CsvToFhirJsonConverter {
                 // Check if both key and value are integers. If so, concatenate them with the string holding all the values
                 if (Int(key) != nil && Int(value) != nil) {
                     let value = Float(key + "." + value)
-                    measurements = measurements + String(value!) + " "
+                    measurements.append(value!)
                 }
                 continue
             }
         }
         
         // Add both strings holding all the ECG's data to the JSON object
-        template!["component"][0]["valueSampledData"]["data"].string = measurements
+        template!["component"][0]["valueSampledData"]["data"].string = getMeasurementsAsString(measurements: measurements)
+
         
         do {
             let convertedData = try JSONSerialization.jsonObject(with: template!.rawData(), options: []) as! FHIRJSON
@@ -86,6 +89,14 @@ struct CsvToFhirJsonConverter {
             print(error)
             return nil
        }
+    }
+    
+    private func getMeasurementsAsString(measurements: [Float]) -> String {
+        var measurementsAsString = ""
+        for measurement in measurements {
+            measurementsAsString = measurementsAsString + String(measurement) + " "
+        }
+        return measurementsAsString
     }
     
     private func getPeriodFromRow(row: [String]) -> Double {
@@ -127,3 +138,5 @@ extension String {
             .compactMap { pattern ~= $0 ? Character($0) : nil })
     }
 }
+
+ */

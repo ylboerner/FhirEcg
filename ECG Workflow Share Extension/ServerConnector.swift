@@ -27,15 +27,15 @@ class ServerConnector {
     func sendObservationsToServer(observations: [Observation]) {
         smartConnection.ready() { error in
             if nil != error {
-                print("Connection to the server couldn't be established properly")
+                print("Could not connect to the server.")
             }
             else {
                 for observation in observations {
                     observation.create(self.smartConnection.server) { error in
                         if nil != error {
-                            print("Failing during sending")
+                            print("Failing during sending.")
                         } else {
-                            print("Observation successfully sent!")
+                            print("Observation successfully sent.")
                         }
                     }
                 }

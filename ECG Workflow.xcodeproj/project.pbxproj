@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF169994242F8A9B001F280E /* CsvParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF169993242F8A9B001F280E /* CsvParser.swift */; };
+		AF169996242F8ACD001F280E /* EcgObservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF169995242F8ACD001F280E /* EcgObservation.swift */; };
+		AF169998242F8AED001F280E /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF169997242F8AED001F280E /* Resources.swift */; };
+		AF16999A242F8B17001F280E /* ObservationJsonTemplates.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF169999242F8B17001F280E /* ObservationJsonTemplates.swift */; };
 		AF19705C23E08B25009E38B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFA6CF0C23CF707C00323206 /* Assets.xcassets */; };
 		AF1C459223D6EBF30073C320 /* CsvToFhirJsonConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1C459123D6EBF30073C320 /* CsvToFhirJsonConverter.swift */; };
 		AF244DAF23D8626000E81FA4 /* Unzipper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF244DAE23D8626000E81FA4 /* Unzipper.swift */; };
@@ -72,6 +76,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AF169993242F8A9B001F280E /* CsvParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CsvParser.swift; sourceTree = "<group>"; };
+		AF169995242F8ACD001F280E /* EcgObservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcgObservation.swift; sourceTree = "<group>"; };
+		AF169997242F8AED001F280E /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
+		AF169999242F8B17001F280E /* ObservationJsonTemplates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservationJsonTemplates.swift; sourceTree = "<group>"; };
 		AF1C459123D6EBF30073C320 /* CsvToFhirJsonConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CsvToFhirJsonConverter.swift; sourceTree = "<group>"; };
 		AF244DAE23D8626000E81FA4 /* Unzipper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unzipper.swift; sourceTree = "<group>"; };
 		AF25226723D70A9B000A2531 /* ServerConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerConnector.swift; sourceTree = "<group>"; };
@@ -210,6 +218,10 @@
 				AFFD3F5623E46CE1001FCDC1 /* AppleWatchFhirJsonEcgObservationTemplate.json */,
 				AFA6CF3E23CF713F00323206 /* MainInterface.storyboard */,
 				AFA6CF4123CF713F00323206 /* Info.plist */,
+				AF169993242F8A9B001F280E /* CsvParser.swift */,
+				AF169995242F8ACD001F280E /* EcgObservation.swift */,
+				AF169997242F8AED001F280E /* Resources.swift */,
+				AF169999242F8B17001F280E /* ObservationJsonTemplates.swift */,
 			);
 			path = "ECG Workflow Share Extension";
 			sourceTree = "<group>";
@@ -422,6 +434,10 @@
 				AFA6CF3D23CF713F00323206 /* ShareViewController.swift in Sources */,
 				AF244DAF23D8626000E81FA4 /* Unzipper.swift in Sources */,
 				AF547C5B23EDCDD20055FC31 /* EcgManager.swift in Sources */,
+				AF169998242F8AED001F280E /* Resources.swift in Sources */,
+				AF169994242F8A9B001F280E /* CsvParser.swift in Sources */,
+				AF169996242F8ACD001F280E /* EcgObservation.swift in Sources */,
+				AF16999A242F8B17001F280E /* ObservationJsonTemplates.swift in Sources */,
 				AFAF74B623CFA3D400B72981 /* CsvImporter.swift in Sources */,
 				AF547C5723EDCC400055FC31 /* FhirJsonToObservationConverter.swift in Sources */,
 				AF25226823D70A9C000A2531 /* ServerConnector.swift in Sources */,
