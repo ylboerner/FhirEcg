@@ -31,12 +31,12 @@ class EcgObservation {
         // Load observation template
         fhirObservation = templates.observationTemplate
 
-        // Name
+        // Name and reference
         fhirObservation!["subject"]["display"].string = ecgData.name!
-        fhirObservation!["subject"]["reference"].string = ecgData.name!
+        fhirObservation!["subject"]["reference"].string = "Patient/e5100d62-be0a-4515-8aa1-5280aad185f5"
         fhirObservation!["performer"][0]["display"].string = ecgData.name!
-        fhirObservation!["performer"][0]["reference"].string = ecgData.name!
-        
+        fhirObservation!["performer"][0]["reference"].string = "Patient/e5100d62-be0a-4515-8aa1-5280aad185f5"
+
         // Device
         fhirObservation!["device"]["display"].string = ecgData.device!
         
