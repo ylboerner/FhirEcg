@@ -9,7 +9,7 @@
 import Foundation
 
 
-class PersistanceController {
+class PersistenceController {
     
     private static let defaults = UserDefaults.standard
     

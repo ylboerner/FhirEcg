@@ -16,22 +16,22 @@ import SMART
 
 class ShareViewController: UIViewController {
     
-    var pathToZip: String!
+    var pathToArchive: String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         
         // Do any additional setup after loading the view.
-        getURLOfExportedZip()
+        getURLOfExportedArchive()
     }
     
     @IBAction func shareData(_ sender: UIButton) {
         let ecgManager = EcgManager()
-        ecgManager.sendEcgsToServer(pathToZip: pathToZip)
+        ecgManager.importEcgsAndSendThemToServer(pathToArchive: pathToArchive)
     }
     
-    private func getURLOfExportedZip() {
+    private func getURLOfExportedArchive() {
         // Load the shared file
         let extensionItem = extensionContext?.inputItems.first as! NSExtensionItem
         let itemProvider = extensionItem.attachments?.first as! NSItemProvider
@@ -43,7 +43,7 @@ class ShareViewController: UIViewController {
                 guard let url = item as? NSURL else { return }
                 //print("\(item.debugDescription)")
                 OperationQueue.main.addOperation {
-                    self.pathToZip = url.relativePath
+                    self.pathToArchive = url.relativePath
                 }
             })
         } else {

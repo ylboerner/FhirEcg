@@ -9,18 +9,18 @@
 import Foundation
 import ZIPFoundation
 
-struct Unzipper {
+struct ArchiveExtractor {
     
-    let fileManager = FileManager()
-    let appBundleDocumentsUrl: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+    private let fileManager = FileManager()
+    private let appBundleDocumentsUrl: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
     
-    func unzipFile(pathToZip: String) {
+    func extractArchive(pathToArchive: String) {
         // Clean up previous exports
         deletePreviousExports()
         
-        // Unzip archive
+        // Extract archive
         do {
-            try fileManager.unzipItem(at: URL(fileURLWithPath: pathToZip), to: appBundleDocumentsUrl)
+            try fileManager.unzipItem(at: URL(fileURLWithPath: pathToArchive), to: appBundleDocumentsUrl)
         } catch {
             print("Extraction of ZIP archive failed with error:\(error)")
         }

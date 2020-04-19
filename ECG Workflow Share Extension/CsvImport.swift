@@ -7,3 +7,9 @@
 //
 
 import Foundation
+import CSV
+
+struct CsvImport {
+    var urlToCSV: URL
+    var csvReader: CSVReader
+}

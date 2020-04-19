@@ -17,24 +17,36 @@ class ServerConnector {
         // Establish a connection to the server
         smartConnection = Client(
             // Change this URL in order to send data to another server
-            baseURL: URL(string: "https://vonk-server.azurewebsites.net/")!,
+            baseURL: URL(string: PersistenceController.getServerAddress())!,
             settings: [
-                "client_id": "ECG Workflow app BIH",       // if you have one
+                //"client_id": "ECG Workflow app BIH",       // if you have one
                 "redirect": "smartapp://callback",    // must be registered
             ]
         )
     }
     
     func sendObservationsToServer(observations: [EcgObservation]) {
+        for observation in observations {
+            observation.smartObservation!.create(self.smartConnection.server) { error in
+                if nil != error {
+                    print(error!)
+                } else {
+                    print("Observation successfully sent.")
+                }
+            }
+        }
+    }
+    /*
+    func sendObservationsToServer(observations: [EcgObservation]) {
         smartConnection.ready() { error in
             if nil != error {
-                print("Could not connect to the server.")
+                print(error!)
             }
             else {
                 for observation in observations {
                     observation.smartObservation!.create(self.smartConnection.server) { error in
                         if nil != error {
-                            print("Failure during sending.")
+                            print(error!)
                         } else {
                             print("Observation successfully sent.")
                         }
@@ -43,4 +55,5 @@ class ServerConnector {
             }
         }
     }
+    */
 }

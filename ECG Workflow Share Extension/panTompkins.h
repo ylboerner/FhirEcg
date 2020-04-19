@@ -30,6 +30,7 @@
  *-------------------------------------------------------------------------------*
  */
 
+
 #ifndef PAN_TOMPKINS
 #define PAN_TOMPKINS
 
@@ -40,3 +41,4 @@ void panTompkins();
 void initFiles(const char file_in[], const char file_out[]);
 
 #endif
+

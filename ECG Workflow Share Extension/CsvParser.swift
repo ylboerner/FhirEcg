@@ -25,10 +25,10 @@ class CsvParser {
     init(csv: CSVReader) {
         self.csv = csv
         parseCsv()
-        validateData()
+        validateName()
     }
     
-    private func validateData() {
+    private func validateName() {
         if (name == nil) {
             self.name = "No name supplied"
         }
@@ -50,7 +50,7 @@ class CsvParser {
                 self.name = value
                 
                 // TODO: Dynamically add the reference
-                self.reference = "Patient/e5100d62-be0a-4515-8aa1-5280aad185f5"
+                self.reference = "e5100d62-be0a-4515-8aa1-5280aad185f5"
             }
 
             else if key == "Device" || key == "Gerät" {
@@ -85,10 +85,20 @@ class CsvParser {
     }
     
     private func getFormattedDate(row: [String]) {
-        var dateInRightFormat = row[1].replacingOccurrences(of: " ", with: "T")
-        dateInRightFormat = dateInRightFormat.replacingOccurrences(of: "T+", with: "+")
-        dateInRightFormat = dateInRightFormat.replacingOccurrences(of: "T-", with: "-")
-        self.date = dateInRightFormat
+        let date = dateFromString(dateString: row[1])
+        let dateAsIsoString = ISOStringFromDate(date: date)
+        self.date = dateAsIsoString
+    }
+    
+    private func dateFromString(dateString: String) -> Date{
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
+        return formatter.date(from: dateString)!
+    }
+    
+    private func ISOStringFromDate(date: Date) -> String {
+        let formatter = ISO8601DateFormatter()
+        return formatter.string(from: date)
     }
     
     private func getSymptomsFromRow(row: [String]) {

@@ -13,7 +13,6 @@ struct ObservationJsonTemplates {
     
     public let observationTemplate: JSON = [
       "resourceType": "Observation",
-      "id": "ekg",
       "status": "final",
       "category": [
         [

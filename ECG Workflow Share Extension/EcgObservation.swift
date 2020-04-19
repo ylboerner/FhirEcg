@@ -13,6 +13,8 @@ import SwiftyJSON
 
 class EcgObservation {
     
+    var urlToCSV: URL
+    var csvReader: CSVReader
     var ecgData: CsvParser
     var fhirObservation: JSON?
     var fhirObservationInFhirJson: FHIRJSON?
@@ -20,8 +22,10 @@ class EcgObservation {
     let templates = ObservationJsonTemplates()
     let resources = Resources()
     
-    init(data: CsvParser) {
-        self.ecgData = data
+    init(csvImport: CsvImport) {
+        self.urlToCSV = csvImport.urlToCSV
+        self.csvReader = csvImport.csvReader
+        self.ecgData = CsvParser(csv: self.csvReader)
         buildFhirObservation()
         convertJsonToFhirJson()
         convertFhirObservationToSmartObservation()
@@ -33,9 +37,9 @@ class EcgObservation {
 
         // Name and reference
         fhirObservation!["subject"]["display"].string = ecgData.name!
-        fhirObservation!["subject"]["reference"].string = "Patient/e5100d62-be0a-4515-8aa1-5280aad185f5"
+        fhirObservation!["subject"]["reference"].string = PersistenceController.getPatientReference()
         fhirObservation!["performer"][0]["display"].string = ecgData.name!
-        fhirObservation!["performer"][0]["reference"].string = "Patient/e5100d62-be0a-4515-8aa1-5280aad185f5"
+        fhirObservation!["performer"][0]["reference"].string = PersistenceController.getPatientReference()
 
         // Device
         fhirObservation!["device"]["display"].string = ecgData.device!
@@ -96,7 +100,7 @@ class EcgObservation {
         return classification
     }
     
-    func createSymptomComponent(system: String, code: String, display: String) -> JSON {
+    private func createSymptomComponent(system: String, code: String, display: String) -> JSON {
         var symptom = templates.symptomComponentTemplate
         symptom["valueCodeableConcept"]["coding"][0]["system"].string = system
         symptom["valueCodeableConcept"]["coding"][0]["code"].string = code

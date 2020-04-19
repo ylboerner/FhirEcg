@@ -13,23 +13,20 @@ import SwiftyJSON
 
 struct EcgManager {
         
-    func sendEcgsToServer(pathToZip: String) {
-        let unzipper = Unzipper()
-        unzipper.unzipFile(pathToZip: pathToZip)
+    func importEcgsAndSendThemToServer(pathToArchive: String) {
+        let archiveExtractor = ArchiveExtractor()
+        archiveExtractor.extractArchive(pathToArchive: pathToArchive)
         
         // Check whether there are new ecgs
-        let csvs = getCSVsFromUnzippedExport()
+        let csvs = getCSVsFromExtractedArchive()
         if csvs.count == 0 {
             print("No ecgs")
             // All the ECGs have been previously imported
             return
         }
         
-        // Parse csvs
-        let parsedCsvs = getParsedCsvs(csvs: csvs)
-        
         // Parse ecgs
-        let ecgObservations = getEcgObservations(parsedCsvs: parsedCsvs)
+        let ecgObservations = getEcgObservations(csvImports: csvs)
         
         // Pan Tompkins Implementation
         // Currently commented out until a new digital filter has been created and implemented
@@ -43,10 +40,10 @@ struct EcgManager {
         print("Done")
     }
     
-    private func getEcgObservations(parsedCsvs: Array<CsvParser>) -> Array<EcgObservation> {
+    private func getEcgObservations(csvImports: Array<CsvImport>) -> Array<EcgObservation> {
         var ecgObservations = Array<EcgObservation>()
-        for parsedCsv in parsedCsvs {
-            let ecgObservation = EcgObservation(data: parsedCsv)
+        for csvImport in csvImports {
+            let ecgObservation = EcgObservation(csvImport: csvImport)
             ecgObservations.append(ecgObservation)
             //writeToFile(json: ecgObservation.fhirObservation, date: ecgObservation.ecgData.date!)
             //print(ecgObservation.fhirObservation)
@@ -54,16 +51,7 @@ struct EcgManager {
         return ecgObservations
     }
     
-    private func getParsedCsvs(csvs: Array<CSVReader>) -> Array<CsvParser> {
-        var parsedCsvs = Array<CsvParser>()
-        for csv in csvs {
-            let csvData = CsvParser(csv: csv)
-            parsedCsvs.append(csvData)
-        }
-        return parsedCsvs
-    }
-    
-    private func getCSVsFromUnzippedExport() -> Array<CSVReader> {
+    private func getCSVsFromExtractedArchive() -> Array<CsvImport> {
         let importer = CsvImporter()
         let arrayWithCSVs = importer.getCSVs()
         return arrayWithCSVs

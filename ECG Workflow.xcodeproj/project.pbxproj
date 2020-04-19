@@ -14,11 +14,13 @@
 		AF16999C242F8D85001F280E /* PanTompkinsAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF16999B242F8D85001F280E /* PanTompkinsAdapter.swift */; };
 		AF1699A0242F8E04001F280E /* panTompkins.c in Sources */ = {isa = PBXBuildFile; fileRef = AF16999E242F8E04001F280E /* panTompkins.c */; };
 		AF19705C23E08B25009E38B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFA6CF0C23CF707C00323206 /* Assets.xcassets */; };
-		AF244DAF23D8626000E81FA4 /* Unzipper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF244DAE23D8626000E81FA4 /* Unzipper.swift */; };
+		AF244DAF23D8626000E81FA4 /* ArchiveExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF244DAE23D8626000E81FA4 /* ArchiveExtractor.swift */; };
 		AF244DB223D9828600E81FA4 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = AF244DB123D9828600E81FA4 /* SwiftyJSON */; };
 		AF244DB423D9A8F600E81FA4 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFA6CF3E23CF713F00323206 /* MainInterface.storyboard */; };
 		AF25226823D70A9C000A2531 /* ServerConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF25226723D70A9B000A2531 /* ServerConnector.swift */; };
 		AF2D50492403B99A00553F24 /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = AF2D50482403B99A00553F24 /* ZIPFoundation */; };
+		AF42BC75244B37970051146A /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF42BC74244B37970051146A /* PersistenceController.swift */; };
+		AF42BC79244B403C0051146A /* CsvImport.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF42BC78244B403C0051146A /* CsvImport.swift */; };
 		AF547C5B23EDCDD20055FC31 /* EcgManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF547C5A23EDCDD20055FC31 /* EcgManager.swift */; };
 		AFA6CF0723CF707700323206 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA6CF0623CF707700323206 /* AppDelegate.swift */; };
 		AFA6CF0923CF707700323206 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA6CF0823CF707700323206 /* SceneDelegate.swift */; };
@@ -83,8 +85,10 @@
 		AF16999D242F8E03001F280E /* ECG Workflow Share Extension-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ECG Workflow Share Extension-Bridging-Header.h"; sourceTree = "<group>"; };
 		AF16999E242F8E04001F280E /* panTompkins.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = panTompkins.c; sourceTree = "<group>"; };
 		AF16999F242F8E04001F280E /* panTompkins.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = panTompkins.h; sourceTree = "<group>"; };
-		AF244DAE23D8626000E81FA4 /* Unzipper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unzipper.swift; sourceTree = "<group>"; };
+		AF244DAE23D8626000E81FA4 /* ArchiveExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveExtractor.swift; sourceTree = "<group>"; };
 		AF25226723D70A9B000A2531 /* ServerConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerConnector.swift; sourceTree = "<group>"; };
+		AF42BC74244B37970051146A /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		AF42BC78244B403C0051146A /* CsvImport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CsvImport.swift; sourceTree = "<group>"; };
 		AF547C5A23EDCDD20055FC31 /* EcgManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcgManager.swift; sourceTree = "<group>"; };
 		AFA6CF0323CF707700323206 /* ECG Workflow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ECG Workflow.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFA6CF0623CF707700323206 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -214,9 +218,11 @@
 				AFAF74B523CFA3D400B72981 /* CsvImporter.swift */,
 				AF169993242F8A9B001F280E /* CsvParser.swift */,
 				AF169995242F8ACD001F280E /* EcgObservation.swift */,
-				AF244DAE23D8626000E81FA4 /* Unzipper.swift */,
+				AF244DAE23D8626000E81FA4 /* ArchiveExtractor.swift */,
 				AF169997242F8AED001F280E /* Resources.swift */,
 				AF169999242F8B17001F280E /* ObservationJsonTemplates.swift */,
+				AF42BC74244B37970051146A /* PersistenceController.swift */,
+				AF42BC78244B403C0051146A /* CsvImport.swift */,
 				AFA6CF3E23CF713F00323206 /* MainInterface.storyboard */,
 				AFA6CF4123CF713F00323206 /* Info.plist */,
 				AF16999B242F8D85001F280E /* PanTompkinsAdapter.swift */,
@@ -432,8 +438,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF42BC79244B403C0051146A /* CsvImport.swift in Sources */,
 				AFA6CF3D23CF713F00323206 /* ShareViewController.swift in Sources */,
-				AF244DAF23D8626000E81FA4 /* Unzipper.swift in Sources */,
+				AF244DAF23D8626000E81FA4 /* ArchiveExtractor.swift in Sources */,
 				AF547C5B23EDCDD20055FC31 /* EcgManager.swift in Sources */,
 				AF169998242F8AED001F280E /* Resources.swift in Sources */,
 				AF169994242F8A9B001F280E /* CsvParser.swift in Sources */,
@@ -443,6 +450,7 @@
 				AF16999A242F8B17001F280E /* ObservationJsonTemplates.swift in Sources */,
 				AFAF74B623CFA3D400B72981 /* CsvImporter.swift in Sources */,
 				AF25226823D70A9C000A2531 /* ServerConnector.swift in Sources */,
+				AF42BC75244B37970051146A /* PersistenceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -615,10 +623,6 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ECG Workflow/Preview Content\"";
 				DEVELOPMENT_TEAM = ZN2U3UB7W5;
 				ENABLE_PREVIEWS = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
 				INFOPLIST_FILE = "ECG Workflow/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -640,10 +644,6 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ECG Workflow/Preview Content\"";
 				DEVELOPMENT_TEAM = ZN2U3UB7W5;
 				ENABLE_PREVIEWS = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
 				INFOPLIST_FILE = "ECG Workflow/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -747,10 +747,6 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZN2U3UB7W5;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
 				INFOPLIST_FILE = "ECG Workflow Share Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -774,10 +770,6 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZN2U3UB7W5;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
 				INFOPLIST_FILE = "ECG Workflow Share Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

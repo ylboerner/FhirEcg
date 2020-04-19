@@ -33,6 +33,7 @@ struct Resources {
         classifications.append(Classification(nameEng: "Sinus Rhythm", nameGer: "Sinusrhythmus", system: "http://snomed.info/sct", code: "251150006", display: "Sinus rhythm"))
         classifications.append(Classification(nameEng: "Atrial Fibrillation", nameGer: "Vorhofflimmern", system: "http://snomed.info/sct", code: "164889003", display: "Electrocardiographic atrial fibrillation"))
         classifications.append(Classification(nameEng: "Inconclusive", nameGer: "Uneindeutig", system: "http://snomed.info/sct", code: "442754001", display: "Inconclusive evaluation finding"))
+        // Blueprint for adding a new classification
         //classifications.append(Classification(nameEng: "", nameGer: "", system: "http://snomed.info/sct", code: "", display: ""))
 
         // Symptoms
@@ -45,6 +46,7 @@ struct Resources {
         symptoms.append(Symptom(nameEng: "Dizziness", nameGer: "Schwindel", system: "http://snomed.info/sct", code: "404640003", display: "Dizziness (finding)"))
         symptoms.append(Symptom(nameEng: "Other", nameGer: "Sonstiges", system: "http://snomed.info/sct", code: "74964007", display: "Other (qualifier value)"))
         symptoms.append(Symptom(nameEng: "None", nameGer: "Ohne", system: "http://snomed.info/sct", code: "260413007", display: "None (qualifier value)"))
+        // Blueprint for adding a new symptom
         //symptoms.append(Symptom(nameEng: "", nameGer: "", system: "http://snomed.info/sct", code: "", display: ""))
 
     }

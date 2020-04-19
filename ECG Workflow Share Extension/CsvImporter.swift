@@ -11,40 +11,27 @@ import CSV
 
 struct CsvImporter {
     
-    let defaults = UserDefaults.standard
+    private let defaults = UserDefaults.standard
 
-    func getCSVs() -> Array<CSVReader> {
+    func getCSVs() -> Array<CsvImport> {
         // Initialize array before it is used in a do catch block
-        var allCSVs = [CSVReader]()
+        var allCSVs = [CsvImport]()
         let csvURLs = getCsvURLs()
         
         for csvURL in csvURLs {
             // Check whether this ECG has been imported before
-            if ecgHasBeenPreviouslyImported(url: csvURL) == false {
+            if PersistenceController.ecgHasBeenSentPreviously(url: csvURL) == false {
                 let stream = InputStream(fileAtPath: csvURL.relativePath)!
                 let csv = try! CSVReader(stream: stream)
-                allCSVs.append(csv)
-                markEcgAsImported(url: csvURL)
+                let csvI = CsvImport(urlToCSV: csvURL, csvReader: csv)
+                allCSVs.append(csvI)
             }
         }
         return allCSVs
     }
     
-    func markEcgAsImported(url: URL) {
-        defaults.set(true, forKey: url.relativePath)
-    }
-    
-    func ecgHasBeenPreviouslyImported(url: URL) -> Bool {
-        let storedURL = defaults.bool(forKey: url.relativePath)
-        if storedURL {
-            return true
-        } else {
-            return false
-        }
-    }
-    
     // Retrieve an array of every CSVs URL
-    func getCsvURLs() -> Array<URL> {
+    private func getCsvURLs() -> Array<URL> {
         var csvURLs = [URL]()
         do {
             csvURLs = try FileManager.default.contentsOfDirectory(at: getCsvDirectory(), includingPropertiesForKeys: nil)
@@ -54,12 +41,12 @@ struct CsvImporter {
         return csvURLs
     }
     
-    func getCsvDirectory() -> URL {
+    private func getCsvDirectory() -> URL {
         let csvURL = URL(string: getDocumentsDirectory().relativePath + "/apple_health_export/electrocardiograms/")
         return csvURL!
     }
     
-    func getDocumentsDirectory() -> URL {
+    private func getDocumentsDirectory() -> URL {
         let documentsURL: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         return documentsURL
     }
