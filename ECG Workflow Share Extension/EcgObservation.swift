@@ -37,9 +37,9 @@ class EcgObservation {
 
         // Name and reference
         fhirObservation!["subject"]["display"].string = ecgData.name!
-        fhirObservation!["subject"]["reference"].string = PersistenceController.getPatientReference()
+        fhirObservation!["subject"]["reference"].string = PersistenceController.getValueFromUserDefaults(key: "patientReference") ?? "No patient reference given"
         fhirObservation!["performer"][0]["display"].string = ecgData.name!
-        fhirObservation!["performer"][0]["reference"].string = PersistenceController.getPatientReference()
+        fhirObservation!["performer"][0]["reference"].string = PersistenceController.getValueFromUserDefaults(key: "patientReference") ?? "No subject reference given"
 
         // Device
         fhirObservation!["device"]["display"].string = ecgData.device!

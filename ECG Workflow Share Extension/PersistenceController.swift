@@ -11,7 +11,7 @@ import Foundation
 
 class PersistenceController {
     
-    private static let defaults = UserDefaults.standard
+    private static let defaults = UserDefaults(suiteName: "group.com.bih.ecgworkflow")!
     
     public static func markEcgAsSent(url: URL) {
         defaults.set(true, forKey: url.relativePath)
@@ -24,6 +24,11 @@ class PersistenceController {
         } else {
             return false
         }
+    }
+    
+    public static func getValueFromUserDefaults(key: String) -> String? {
+        let value = defaults.string(forKey: key)
+        return value
     }
     
     public static func getServerAddress() -> String {

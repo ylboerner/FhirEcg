@@ -10,8 +10,8 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var serverAddress: String = ""
-    @State var patientReference: String = ""
+    @State var serverAddress: String = PersistenceController.getValueFromUserDefaults(key: "serverAddress") ?? "Please insert server address"
+    @State var patientReference: String = PersistenceController.getValueFromUserDefaults(key: "patientReference") ?? "Please insert patient reference"
     
     var body: some View {
         ScrollView(Axis.Set.vertical, showsIndicators: true) {
@@ -21,9 +21,15 @@ struct ContentView: View {
                         .resizable()
                         .scaledToFit()
                         .frame(width: 250, height: 250)
-                    TextField("Server address", text: $serverAddress).multilineTextAlignment(.center)
+                    TextField(serverAddress, text: $serverAddress, onCommit: {
+                        PersistenceController.setValueInUserDefaults(key: "serverAddress", value: self.serverAddress)
+                    })
+                        .multilineTextAlignment(.center)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
-                    TextField("Patient reference", text: $patientReference).multilineTextAlignment(.center)
+                    TextField("Patient reference", text: $patientReference, onCommit: {
+                        PersistenceController.setValueInUserDefaults(key: "patientReference", value: self.patientReference)
+                    })
+                        .multilineTextAlignment(.center)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                 }
                 Spacer(minLength: 20)
@@ -62,4 +68,17 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
+struct PersistenceController {
+    
+    private static let defaults = UserDefaults(suiteName: "group.com.bih.ecgworkflow")!
+    
+    public static func setValueInUserDefaults(key: String, value: String) {
+        PersistenceController.defaults.set(value as String, forKey: key)
+    }
+    
+    public static func getValueFromUserDefaults(key: String) -> String? {
+        let value = defaults.string(forKey: key)
+        return value
+    }
+}
 

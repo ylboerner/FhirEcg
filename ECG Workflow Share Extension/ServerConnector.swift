@@ -17,7 +17,7 @@ class ServerConnector {
         // Establish a connection to the server
         smartConnection = Client(
             // Change this URL in order to send data to another server
-            baseURL: URL(string: PersistenceController.getServerAddress())!,
+            baseURL: URL(string: PersistenceController.getValueFromUserDefaults(key: "serverAddress") ?? "No server address")!,
             settings: [
                 //"client_id": "ECG Workflow app BIH",       // if you have one
                 "redirect": "smartapp://callback",    // must be registered
@@ -31,6 +31,7 @@ class ServerConnector {
                 if nil != error {
                     print(error!)
                 } else {
+                    PersistenceController.markEcgAsSent(url: observation.urlToCSV)
                     print("Observation successfully sent.")
                 }
             }

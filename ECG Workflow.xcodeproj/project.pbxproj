@@ -89,6 +89,8 @@
 		AF25226723D70A9B000A2531 /* ServerConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerConnector.swift; sourceTree = "<group>"; };
 		AF42BC74244B37970051146A /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		AF42BC78244B403C0051146A /* CsvImport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CsvImport.swift; sourceTree = "<group>"; };
+		AF4A3F7C244F19EA007072C7 /* ECG Workflow.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ECG Workflow.entitlements"; sourceTree = "<group>"; };
+		AF4A3F7D244F1A65007072C7 /* ECG Workflow Share Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ECG Workflow Share Extension.entitlements"; sourceTree = "<group>"; };
 		AF547C5A23EDCDD20055FC31 /* EcgManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcgManager.swift; sourceTree = "<group>"; };
 		AFA6CF0323CF707700323206 /* ECG Workflow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ECG Workflow.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFA6CF0623CF707700323206 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 		AFA6CF0523CF707700323206 /* ECG Workflow */ = {
 			isa = PBXGroup;
 			children = (
+				AF4A3F7C244F19EA007072C7 /* ECG Workflow.entitlements */,
 				AFA6CF0623CF707700323206 /* AppDelegate.swift */,
 				AFA6CF0823CF707700323206 /* SceneDelegate.swift */,
 				AFA6CF0A23CF707700323206 /* ContentView.swift */,
@@ -212,6 +215,7 @@
 		AFA6CF3B23CF713F00323206 /* ECG Workflow Share Extension */ = {
 			isa = PBXGroup;
 			children = (
+				AF4A3F7D244F1A65007072C7 /* ECG Workflow Share Extension.entitlements */,
 				AFA6CF3C23CF713F00323206 /* ShareViewController.swift */,
 				AF547C5A23EDCDD20055FC31 /* EcgManager.swift */,
 				AF25226723D70A9B000A2531 /* ServerConnector.swift */,
@@ -619,6 +623,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "ECG Workflow/ECG Workflow.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ECG Workflow/Preview Content\"";
 				DEVELOPMENT_TEAM = ZN2U3UB7W5;
@@ -640,6 +645,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "ECG Workflow/ECG Workflow.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ECG Workflow/Preview Content\"";
 				DEVELOPMENT_TEAM = ZN2U3UB7W5;
@@ -744,6 +750,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "ECG Workflow Share Extension/ECG Workflow Share Extension.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZN2U3UB7W5;
@@ -767,6 +774,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "ECG Workflow Share Extension/ECG Workflow Share Extension.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZN2U3UB7W5;
