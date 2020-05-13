@@ -30,12 +30,4 @@ class PersistenceController {
         let value = defaults.string(forKey: key)
         return value
     }
-    
-    public static func getServerAddress() -> String {
-        return "https://vonk-server.azurewebsites.net/"
-    }
-    
-    public static func getPatientReference() -> String {
-        return "e5100d62-be0a-4515-8aa1-5280aad185f5"
-    }
 }

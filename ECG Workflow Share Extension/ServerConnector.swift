@@ -29,14 +29,17 @@ class ServerConnector {
         for observation in observations {
             observation.smartObservation!.create(self.smartConnection.server) { error in
                 if nil != error {
+                    // Transmission of the observation failed
                     print(error!)
                 } else {
+                    //Observation was transmitted successfully
+                    print("Observation successfully sent")
                     PersistenceController.markEcgAsSent(url: observation.urlToCSV)
-                    print("Observation successfully sent.")
                 }
             }
         }
     }
+    
     /*
     func sendObservationsToServer(observations: [EcgObservation]) {
         smartConnection.ready() { error in

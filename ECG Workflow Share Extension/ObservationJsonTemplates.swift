@@ -53,9 +53,9 @@ struct ObservationJsonTemplates {
           "code": [
             "coding": [
               [
-                "system": "http://unitsofmeasure.org",
-                "code": "uV",
-                "display": "microvolt"
+                "system": "urn:oid:2.16.840.1.113883.6.24",
+                "code": "131329",
+                "display": "MDC_ECG_ELEC_POTL_I"
               ]
             ]
           ],
