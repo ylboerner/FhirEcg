@@ -156,6 +156,7 @@
 				AFA6CF1C23CF707D00323206 /* ECG WorkflowTests */,
 				AFA6CF2723CF707D00323206 /* ECG WorkflowUITests */,
 				AFA6CF3B23CF713F00323206 /* ECG Workflow Share Extension */,
+				AFC80E9A2494CE170075ADD3 /* ECG Workflow Share Extension Tests */,
 				AFA6CF0423CF707700323206 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -174,10 +175,10 @@
 		AFA6CF0523CF707700323206 /* ECG Workflow */ = {
 			isa = PBXGroup;
 			children = (
+				AFC80E942494CB9D0075ADD3 /* Services */,
+				AFC80E932494CB710075ADD3 /* UserInterface */,
 				AF4A3F7C244F19EA007072C7 /* ECG Workflow.entitlements */,
 				AFA6CF0623CF707700323206 /* AppDelegate.swift */,
-				AFA6CF0823CF707700323206 /* SceneDelegate.swift */,
-				AFA6CF0A23CF707700323206 /* ContentView.swift */,
 				AFA6CF0C23CF707C00323206 /* Assets.xcassets */,
 				AFA6CF1123CF707C00323206 /* LaunchScreen.storyboard */,
 				AFA6CF1423CF707C00323206 /* Info.plist */,
@@ -215,26 +216,105 @@
 		AFA6CF3B23CF713F00323206 /* ECG Workflow Share Extension */ = {
 			isa = PBXGroup;
 			children = (
-				AF4A3F7D244F1A65007072C7 /* ECG Workflow Share Extension.entitlements */,
 				AFA6CF3C23CF713F00323206 /* ShareViewController.swift */,
-				AF547C5A23EDCDD20055FC31 /* EcgManager.swift */,
-				AF25226723D70A9B000A2531 /* ServerConnector.swift */,
-				AFAF74B523CFA3D400B72981 /* CsvImporter.swift */,
-				AF169993242F8A9B001F280E /* CsvParser.swift */,
-				AF169995242F8ACD001F280E /* EcgObservation.swift */,
-				AF244DAE23D8626000E81FA4 /* ArchiveExtractor.swift */,
-				AF169997242F8AED001F280E /* Resources.swift */,
-				AF169999242F8B17001F280E /* ObservationJsonTemplates.swift */,
-				AF42BC74244B37970051146A /* PersistenceController.swift */,
-				AF42BC78244B403C0051146A /* CsvImport.swift */,
-				AFA6CF3E23CF713F00323206 /* MainInterface.storyboard */,
+				AFC80E9B2494CE550075ADD3 /* Clients */,
+				AFC80E9C2494CE710075ADD3 /* Interfaces */,
+				AFC80E972494CBED0075ADD3 /* DataModel */,
+				AFC80E992494CCB30075ADD3 /* UserInterface */,
+				AFC80E982494CC1B0075ADD3 /* Resources */,
+				AFC80E962494CBD40075ADD3 /* Services */,
+				AFC80E952494CBAF0075ADD3 /* PanTompkins */,
+				AF4A3F7D244F1A65007072C7 /* ECG Workflow Share Extension.entitlements */,
 				AFA6CF4123CF713F00323206 /* Info.plist */,
+			);
+			path = "ECG Workflow Share Extension";
+			sourceTree = "<group>";
+		};
+		AFC80E932494CB710075ADD3 /* UserInterface */ = {
+			isa = PBXGroup;
+			children = (
+				AFA6CF0823CF707700323206 /* SceneDelegate.swift */,
+				AFA6CF0A23CF707700323206 /* ContentView.swift */,
+			);
+			path = UserInterface;
+			sourceTree = "<group>";
+		};
+		AFC80E942494CB9D0075ADD3 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		AFC80E952494CBAF0075ADD3 /* PanTompkins */ = {
+			isa = PBXGroup;
+			children = (
 				AF16999B242F8D85001F280E /* PanTompkinsAdapter.swift */,
 				AF16999E242F8E04001F280E /* panTompkins.c */,
 				AF16999F242F8E04001F280E /* panTompkins.h */,
 				AF16999D242F8E03001F280E /* ECG Workflow Share Extension-Bridging-Header.h */,
 			);
-			path = "ECG Workflow Share Extension";
+			path = PanTompkins;
+			sourceTree = "<group>";
+		};
+		AFC80E962494CBD40075ADD3 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				AF169993242F8A9B001F280E /* CsvParser.swift */,
+				AF42BC74244B37970051146A /* PersistenceController.swift */,
+				AF25226723D70A9B000A2531 /* ServerConnector.swift */,
+				AFAF74B523CFA3D400B72981 /* CsvImporter.swift */,
+				AF244DAE23D8626000E81FA4 /* ArchiveExtractor.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		AFC80E972494CBED0075ADD3 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				AF169995242F8ACD001F280E /* EcgObservation.swift */,
+				AF42BC78244B403C0051146A /* CsvImport.swift */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
+		AFC80E982494CC1B0075ADD3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AF169997242F8AED001F280E /* Resources.swift */,
+				AF169999242F8B17001F280E /* ObservationJsonTemplates.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		AFC80E992494CCB30075ADD3 /* UserInterface */ = {
+			isa = PBXGroup;
+			children = (
+				AFA6CF3E23CF713F00323206 /* MainInterface.storyboard */,
+			);
+			path = UserInterface;
+			sourceTree = "<group>";
+		};
+		AFC80E9A2494CE170075ADD3 /* ECG Workflow Share Extension Tests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "ECG Workflow Share Extension Tests";
+			sourceTree = "<group>";
+		};
+		AFC80E9B2494CE550075ADD3 /* Clients */ = {
+			isa = PBXGroup;
+			children = (
+				AF547C5A23EDCDD20055FC31 /* EcgManager.swift */,
+			);
+			path = Clients;
+			sourceTree = "<group>";
+		};
+		AFC80E9C2494CE710075ADD3 /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interfaces;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -763,7 +843,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bih.ECG-Workflow.ECG-Workflow-Share-Extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "ECG Workflow Share Extension/ECG Workflow Share Extension-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "ECG Workflow Share Extension/PanTompkins/ECG Workflow Share Extension-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -787,7 +867,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bih.ECG-Workflow.ECG-Workflow-Share-Extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "ECG Workflow Share Extension/ECG Workflow Share Extension-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "ECG Workflow Share Extension/PanTompkins/ECG Workflow Share Extension-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
