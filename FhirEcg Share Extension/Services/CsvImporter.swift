@@ -13,9 +13,9 @@ struct CsvImporter {
     
     private let defaults = UserDefaults.standard
 
-    func getCSVs() -> Array<CsvImport> {
+    func getCSVs() -> Array<DataCsvImport> {
         // Initialize array before it is used in a do catch block
-        var allCSVs = [CsvImport]()
+        var allCSVs = [DataCsvImport]()
         let csvURLs = getCsvURLs()
         
         for csvURL in csvURLs {
@@ -23,7 +23,7 @@ struct CsvImporter {
             if PersistenceController.ecgHasBeenSentPreviously(url: csvURL) == false {
                 let stream = InputStream(fileAtPath: csvURL.relativePath)!
                 let csv = try! CSVReader(stream: stream)
-                let csvI = CsvImport(urlToCSV: csvURL, csvReader: csv)
+                let csvI = DataCsvImport(urlToCSV: csvURL, csvReader: csv)
                 allCSVs.append(csvI)
             }
         }

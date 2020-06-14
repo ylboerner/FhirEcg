@@ -27,7 +27,7 @@
 		AF287B6E24962D7400C27B30 /* ecg_2020-02-02.csv in Resources */ = {isa = PBXBuildFile; fileRef = AF287B6724962D7400C27B30 /* ecg_2020-02-02.csv */; };
 		AF2D50492403B99A00553F24 /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = AF2D50482403B99A00553F24 /* ZIPFoundation */; };
 		AF42BC75244B37970051146A /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF42BC74244B37970051146A /* PersistenceController.swift */; };
-		AF42BC79244B403C0051146A /* CsvImport.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF42BC78244B403C0051146A /* CsvImport.swift */; };
+		AF42BC79244B403C0051146A /* DataCsvImport.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF42BC78244B403C0051146A /* DataCsvImport.swift */; };
 		AF547C5B23EDCDD20055FC31 /* EcgManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF547C5A23EDCDD20055FC31 /* EcgManager.swift */; };
 		AFA6CF0723CF707700323206 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA6CF0623CF707700323206 /* AppDelegate.swift */; };
 		AFA6CF0923CF707700323206 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA6CF0823CF707700323206 /* SceneDelegate.swift */; };
@@ -43,6 +43,8 @@
 		AFAF74B623CFA3D400B72981 /* CsvImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAF74B523CFA3D400B72981 /* CsvImporter.swift */; };
 		AFC266A523D738B000B56A0A /* SMART in Frameworks */ = {isa = PBXBuildFile; productRef = AFC266A423D738B000B56A0A /* SMART */; };
 		AFC266A823D85A1C00B56A0A /* CSV in Frameworks */ = {isa = PBXBuildFile; productRef = AFC266A723D85A1C00B56A0A /* CSV */; };
+		AFF0B71C2496392800BEE402 /* DataPatient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF0B71B2496392800BEE402 /* DataPatient.swift */; };
+		AFF0B71E249639BA00BEE402 /* PPatientCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF0B71D249639BA00BEE402 /* PPatientCreator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,7 +104,7 @@
 		AF287B6624962D7300C27B30 /* ecg_2020-01-29_1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "ecg_2020-01-29_1.csv"; sourceTree = "<group>"; };
 		AF287B6724962D7400C27B30 /* ecg_2020-02-02.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "ecg_2020-02-02.csv"; sourceTree = "<group>"; };
 		AF42BC74244B37970051146A /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
-		AF42BC78244B403C0051146A /* CsvImport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CsvImport.swift; sourceTree = "<group>"; };
+		AF42BC78244B403C0051146A /* DataCsvImport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCsvImport.swift; sourceTree = "<group>"; };
 		AF4A3F7C244F19EA007072C7 /* ECG Workflow.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ECG Workflow.entitlements"; sourceTree = "<group>"; };
 		AF4A3F7D244F1A65007072C7 /* ECG Workflow Share Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ECG Workflow Share Extension.entitlements"; sourceTree = "<group>"; };
 		AF547C5A23EDCDD20055FC31 /* EcgManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcgManager.swift; sourceTree = "<group>"; };
@@ -125,6 +127,8 @@
 		AFA6CF3F23CF713F00323206 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		AFA6CF4123CF713F00323206 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFAF74B523CFA3D400B72981 /* CsvImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CsvImporter.swift; sourceTree = "<group>"; };
+		AFF0B71B2496392800BEE402 /* DataPatient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPatient.swift; sourceTree = "<group>"; };
+		AFF0B71D249639BA00BEE402 /* PPatientCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPatientCreator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,7 +250,7 @@
 			children = (
 				AFA6CF3C23CF713F00323206 /* ShareViewController.swift */,
 				AFC80E9B2494CE550075ADD3 /* Clients */,
-				AFC80E9C2494CE710075ADD3 /* Interfaces */,
+				AFC80E9C2494CE710075ADD3 /* Protocols */,
 				AFC80E972494CBED0075ADD3 /* DataModel */,
 				AFC80E992494CCB30075ADD3 /* UserInterface */,
 				AFC80E982494CC1B0075ADD3 /* Resources */,
@@ -301,7 +305,8 @@
 			isa = PBXGroup;
 			children = (
 				AF169995242F8ACD001F280E /* EcgObservation.swift */,
-				AF42BC78244B403C0051146A /* CsvImport.swift */,
+				AF42BC78244B403C0051146A /* DataCsvImport.swift */,
+				AFF0B71B2496392800BEE402 /* DataPatient.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -339,11 +344,12 @@
 			path = Clients;
 			sourceTree = "<group>";
 		};
-		AFC80E9C2494CE710075ADD3 /* Interfaces */ = {
+		AFC80E9C2494CE710075ADD3 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				AFF0B71D249639BA00BEE402 /* PPatientCreator.swift */,
 			);
-			path = Interfaces;
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -558,9 +564,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF42BC79244B403C0051146A /* CsvImport.swift in Sources */,
+				AF42BC79244B403C0051146A /* DataCsvImport.swift in Sources */,
 				AFA6CF3D23CF713F00323206 /* ShareViewController.swift in Sources */,
 				AF244DAF23D8626000E81FA4 /* ArchiveExtractor.swift in Sources */,
+				AFF0B71C2496392800BEE402 /* DataPatient.swift in Sources */,
 				AF547C5B23EDCDD20055FC31 /* EcgManager.swift in Sources */,
 				AF169998242F8AED001F280E /* Resources.swift in Sources */,
 				AF169994242F8A9B001F280E /* CsvParser.swift in Sources */,
@@ -569,6 +576,7 @@
 				AF16999C242F8D85001F280E /* PanTompkinsAdapter.swift in Sources */,
 				AF16999A242F8B17001F280E /* ObservationJsonTemplates.swift in Sources */,
 				AFAF74B623CFA3D400B72981 /* CsvImporter.swift in Sources */,
+				AFF0B71E249639BA00BEE402 /* PPatientCreator.swift in Sources */,
 				AF25226823D70A9C000A2531 /* ServerConnector.swift in Sources */,
 				AF42BC75244B37970051146A /* PersistenceController.swift in Sources */,
 			);

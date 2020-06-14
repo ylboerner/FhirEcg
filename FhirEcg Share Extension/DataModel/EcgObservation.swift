@@ -22,7 +22,7 @@ class EcgObservation {
     let templates = ObservationJsonTemplates()
     let resources = Resources()
     
-    init(csvImport: CsvImport) {
+    init(csvImport: DataCsvImport) {
         self.urlToCSV = csvImport.urlToCSV
         self.csvReader = csvImport.csvReader
         self.ecgData = CsvParser(csv: self.csvReader)
@@ -32,17 +32,20 @@ class EcgObservation {
     }
     
     private func createPatient() {
-        //var patient = Patient()
-        //patient.na
+        var patient = Patient()
+        //patient.
+        var name = HumanName()
+        name.family = FHIRString(ecgData.name!)
+        
+        //patient. = name
     }
+    
+    
     
     private func createObservationFromData() {
         var observation = Observation()
         observation.status = ObservationStatus(rawValue: "final")
         //observation.performer = ecgData.name!
-        
-        
-        
     }
     
     private func buildFhirObservation() {

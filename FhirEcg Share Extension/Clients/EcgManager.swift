@@ -40,7 +40,7 @@ struct EcgManager {
         print("Done")
     }
     
-    private func getEcgObservations(csvImports: Array<CsvImport>) -> Array<EcgObservation> {
+    private func getEcgObservations(csvImports: Array<DataCsvImport>) -> Array<EcgObservation> {
         var ecgObservations = Array<EcgObservation>()
         for csvImport in csvImports {
             let ecgObservation = EcgObservation(csvImport: csvImport)
@@ -51,7 +51,7 @@ struct EcgManager {
         return ecgObservations
     }
     
-    private func getCSVsFromExtractedArchive() -> Array<CsvImport> {
+    private func getCSVsFromExtractedArchive() -> Array<DataCsvImport> {
         let importer = CsvImporter()
         let arrayWithCSVs = importer.getCSVs()
         return arrayWithCSVs

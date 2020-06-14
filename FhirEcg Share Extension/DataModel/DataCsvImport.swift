@@ -9,7 +9,7 @@
 import Foundation
 import CSV
 
-struct CsvImport {
+struct DataCsvImport {
     var urlToCSV: URL
     var csvReader: CSVReader
 }
