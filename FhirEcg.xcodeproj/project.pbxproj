@@ -18,6 +18,13 @@
 		AF244DB223D9828600E81FA4 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = AF244DB123D9828600E81FA4 /* SwiftyJSON */; };
 		AF244DB423D9A8F600E81FA4 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFA6CF3E23CF713F00323206 /* MainInterface.storyboard */; };
 		AF25226823D70A9C000A2531 /* ServerConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF25226723D70A9B000A2531 /* ServerConnector.swift */; };
+		AF287B6824962D7400C27B30 /* ecg_2020-01-29.csv in Resources */ = {isa = PBXBuildFile; fileRef = AF287B6124962D7300C27B30 /* ecg_2020-01-29.csv */; };
+		AF287B6924962D7400C27B30 /* ecg_2019-12-18.csv in Resources */ = {isa = PBXBuildFile; fileRef = AF287B6224962D7300C27B30 /* ecg_2019-12-18.csv */; };
+		AF287B6A24962D7400C27B30 /* ecg_2019-12-18_2.csv in Resources */ = {isa = PBXBuildFile; fileRef = AF287B6324962D7300C27B30 /* ecg_2019-12-18_2.csv */; };
+		AF287B6B24962D7400C27B30 /* ecg_2019-12-18_1.csv in Resources */ = {isa = PBXBuildFile; fileRef = AF287B6424962D7300C27B30 /* ecg_2019-12-18_1.csv */; };
+		AF287B6C24962D7400C27B30 /* ecg_2019-12-18_3.csv in Resources */ = {isa = PBXBuildFile; fileRef = AF287B6524962D7300C27B30 /* ecg_2019-12-18_3.csv */; };
+		AF287B6D24962D7400C27B30 /* ecg_2020-01-29_1.csv in Resources */ = {isa = PBXBuildFile; fileRef = AF287B6624962D7300C27B30 /* ecg_2020-01-29_1.csv */; };
+		AF287B6E24962D7400C27B30 /* ecg_2020-02-02.csv in Resources */ = {isa = PBXBuildFile; fileRef = AF287B6724962D7400C27B30 /* ecg_2020-02-02.csv */; };
 		AF2D50492403B99A00553F24 /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = AF2D50482403B99A00553F24 /* ZIPFoundation */; };
 		AF42BC75244B37970051146A /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF42BC74244B37970051146A /* PersistenceController.swift */; };
 		AF42BC79244B403C0051146A /* CsvImport.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF42BC78244B403C0051146A /* CsvImport.swift */; };
@@ -28,11 +35,11 @@
 		AFA6CF0D23CF707C00323206 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFA6CF0C23CF707C00323206 /* Assets.xcassets */; };
 		AFA6CF1023CF707C00323206 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFA6CF0F23CF707C00323206 /* Preview Assets.xcassets */; };
 		AFA6CF1323CF707C00323206 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFA6CF1123CF707C00323206 /* LaunchScreen.storyboard */; };
-		AFA6CF1E23CF707D00323206 /* ECG_WorkflowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA6CF1D23CF707D00323206 /* ECG_WorkflowTests.swift */; };
-		AFA6CF2923CF707D00323206 /* ECG_WorkflowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA6CF2823CF707D00323206 /* ECG_WorkflowUITests.swift */; };
+		AFA6CF1E23CF707D00323206 /* FhirEcgTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA6CF1D23CF707D00323206 /* FhirEcgTests.swift */; };
+		AFA6CF2923CF707D00323206 /* FhirEcgUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA6CF2823CF707D00323206 /* FhirEcgUITests.swift */; };
 		AFA6CF3D23CF713F00323206 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA6CF3C23CF713F00323206 /* ShareViewController.swift */; };
 		AFA6CF4023CF713F00323206 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFA6CF3E23CF713F00323206 /* MainInterface.storyboard */; };
-		AFA6CF4423CF713F00323206 /* ECG Workflow Share Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AFA6CF3A23CF713F00323206 /* ECG Workflow Share Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		AFA6CF4423CF713F00323206 /* FhirEcg Share Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AFA6CF3A23CF713F00323206 /* FhirEcg Share Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		AFAF74B623CFA3D400B72981 /* CsvImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAF74B523CFA3D400B72981 /* CsvImporter.swift */; };
 		AFC266A523D738B000B56A0A /* SMART in Frameworks */ = {isa = PBXBuildFile; productRef = AFC266A423D738B000B56A0A /* SMART */; };
 		AFC266A823D85A1C00B56A0A /* CSV in Frameworks */ = {isa = PBXBuildFile; productRef = AFC266A723D85A1C00B56A0A /* CSV */; };
@@ -69,7 +76,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				AFA6CF4423CF713F00323206 /* ECG Workflow Share Extension.appex in Embed App Extensions */,
+				AFA6CF4423CF713F00323206 /* FhirEcg Share Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -82,17 +89,24 @@
 		AF169997242F8AED001F280E /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 		AF169999242F8B17001F280E /* ObservationJsonTemplates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservationJsonTemplates.swift; sourceTree = "<group>"; };
 		AF16999B242F8D85001F280E /* PanTompkinsAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanTompkinsAdapter.swift; sourceTree = "<group>"; };
-		AF16999D242F8E03001F280E /* ECG Workflow Share Extension-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ECG Workflow Share Extension-Bridging-Header.h"; sourceTree = "<group>"; };
+		AF16999D242F8E03001F280E /* FhirEcg Share Extension-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FhirEcg Share Extension-Bridging-Header.h"; sourceTree = "<group>"; };
 		AF16999E242F8E04001F280E /* panTompkins.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = panTompkins.c; sourceTree = "<group>"; };
 		AF16999F242F8E04001F280E /* panTompkins.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = panTompkins.h; sourceTree = "<group>"; };
 		AF244DAE23D8626000E81FA4 /* ArchiveExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveExtractor.swift; sourceTree = "<group>"; };
 		AF25226723D70A9B000A2531 /* ServerConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerConnector.swift; sourceTree = "<group>"; };
+		AF287B6124962D7300C27B30 /* ecg_2020-01-29.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "ecg_2020-01-29.csv"; sourceTree = "<group>"; };
+		AF287B6224962D7300C27B30 /* ecg_2019-12-18.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "ecg_2019-12-18.csv"; sourceTree = "<group>"; };
+		AF287B6324962D7300C27B30 /* ecg_2019-12-18_2.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "ecg_2019-12-18_2.csv"; sourceTree = "<group>"; };
+		AF287B6424962D7300C27B30 /* ecg_2019-12-18_1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "ecg_2019-12-18_1.csv"; sourceTree = "<group>"; };
+		AF287B6524962D7300C27B30 /* ecg_2019-12-18_3.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "ecg_2019-12-18_3.csv"; sourceTree = "<group>"; };
+		AF287B6624962D7300C27B30 /* ecg_2020-01-29_1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "ecg_2020-01-29_1.csv"; sourceTree = "<group>"; };
+		AF287B6724962D7400C27B30 /* ecg_2020-02-02.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "ecg_2020-02-02.csv"; sourceTree = "<group>"; };
 		AF42BC74244B37970051146A /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		AF42BC78244B403C0051146A /* CsvImport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CsvImport.swift; sourceTree = "<group>"; };
 		AF4A3F7C244F19EA007072C7 /* ECG Workflow.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ECG Workflow.entitlements"; sourceTree = "<group>"; };
 		AF4A3F7D244F1A65007072C7 /* ECG Workflow Share Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ECG Workflow Share Extension.entitlements"; sourceTree = "<group>"; };
 		AF547C5A23EDCDD20055FC31 /* EcgManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcgManager.swift; sourceTree = "<group>"; };
-		AFA6CF0323CF707700323206 /* ECG Workflow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ECG Workflow.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFA6CF0323CF707700323206 /* FhirEcg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FhirEcg.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFA6CF0623CF707700323206 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFA6CF0823CF707700323206 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		AFA6CF0A23CF707700323206 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -100,13 +114,13 @@
 		AFA6CF0F23CF707C00323206 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AFA6CF1223CF707C00323206 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AFA6CF1423CF707C00323206 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AFA6CF1923CF707D00323206 /* ECG WorkflowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ECG WorkflowTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AFA6CF1D23CF707D00323206 /* ECG_WorkflowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECG_WorkflowTests.swift; sourceTree = "<group>"; };
+		AFA6CF1923CF707D00323206 /* FhirEcgTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FhirEcgTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFA6CF1D23CF707D00323206 /* FhirEcgTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FhirEcgTests.swift; sourceTree = "<group>"; };
 		AFA6CF1F23CF707D00323206 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AFA6CF2423CF707D00323206 /* ECG WorkflowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ECG WorkflowUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AFA6CF2823CF707D00323206 /* ECG_WorkflowUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECG_WorkflowUITests.swift; sourceTree = "<group>"; };
+		AFA6CF2423CF707D00323206 /* FhirEcgUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FhirEcgUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFA6CF2823CF707D00323206 /* FhirEcgUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FhirEcgUITests.swift; sourceTree = "<group>"; };
 		AFA6CF2A23CF707D00323206 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AFA6CF3A23CF713F00323206 /* ECG Workflow Share Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "ECG Workflow Share Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFA6CF3A23CF713F00323206 /* FhirEcg Share Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "FhirEcg Share Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFA6CF3C23CF713F00323206 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		AFA6CF3F23CF713F00323206 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		AFA6CF4123CF713F00323206 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -149,14 +163,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AF287B6024962C9400C27B30 /* TestData */ = {
+			isa = PBXGroup;
+			children = (
+				AF287B6424962D7300C27B30 /* ecg_2019-12-18_1.csv */,
+				AF287B6324962D7300C27B30 /* ecg_2019-12-18_2.csv */,
+				AF287B6524962D7300C27B30 /* ecg_2019-12-18_3.csv */,
+				AF287B6224962D7300C27B30 /* ecg_2019-12-18.csv */,
+				AF287B6624962D7300C27B30 /* ecg_2020-01-29_1.csv */,
+				AF287B6124962D7300C27B30 /* ecg_2020-01-29.csv */,
+				AF287B6724962D7400C27B30 /* ecg_2020-02-02.csv */,
+			);
+			path = TestData;
+			sourceTree = "<group>";
+		};
 		AFA6CEFA23CF707700323206 = {
 			isa = PBXGroup;
 			children = (
-				AFA6CF0523CF707700323206 /* ECG Workflow */,
-				AFA6CF1C23CF707D00323206 /* ECG WorkflowTests */,
-				AFA6CF2723CF707D00323206 /* ECG WorkflowUITests */,
-				AFA6CF3B23CF713F00323206 /* ECG Workflow Share Extension */,
-				AFC80E9A2494CE170075ADD3 /* ECG Workflow Share Extension Tests */,
+				AFA6CF0523CF707700323206 /* FhirEcg */,
+				AFA6CF1C23CF707D00323206 /* FhirEcgTests */,
+				AFA6CF2723CF707D00323206 /* FhirEcgUITests */,
+				AFA6CF3B23CF713F00323206 /* FhirEcg Share Extension */,
+				AFC80E9A2494CE170075ADD3 /* FhirEcg Share Extension Tests */,
 				AFA6CF0423CF707700323206 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -164,15 +192,15 @@
 		AFA6CF0423CF707700323206 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AFA6CF0323CF707700323206 /* ECG Workflow.app */,
-				AFA6CF1923CF707D00323206 /* ECG WorkflowTests.xctest */,
-				AFA6CF2423CF707D00323206 /* ECG WorkflowUITests.xctest */,
-				AFA6CF3A23CF713F00323206 /* ECG Workflow Share Extension.appex */,
+				AFA6CF0323CF707700323206 /* FhirEcg.app */,
+				AFA6CF1923CF707D00323206 /* FhirEcgTests.xctest */,
+				AFA6CF2423CF707D00323206 /* FhirEcgUITests.xctest */,
+				AFA6CF3A23CF713F00323206 /* FhirEcg Share Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		AFA6CF0523CF707700323206 /* ECG Workflow */ = {
+		AFA6CF0523CF707700323206 /* FhirEcg */ = {
 			isa = PBXGroup;
 			children = (
 				AFC80E942494CB9D0075ADD3 /* Services */,
@@ -184,7 +212,7 @@
 				AFA6CF1423CF707C00323206 /* Info.plist */,
 				AFA6CF0E23CF707C00323206 /* Preview Content */,
 			);
-			path = "ECG Workflow";
+			path = FhirEcg;
 			sourceTree = "<group>";
 		};
 		AFA6CF0E23CF707C00323206 /* Preview Content */ = {
@@ -195,25 +223,25 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		AFA6CF1C23CF707D00323206 /* ECG WorkflowTests */ = {
+		AFA6CF1C23CF707D00323206 /* FhirEcgTests */ = {
 			isa = PBXGroup;
 			children = (
-				AFA6CF1D23CF707D00323206 /* ECG_WorkflowTests.swift */,
+				AFA6CF1D23CF707D00323206 /* FhirEcgTests.swift */,
 				AFA6CF1F23CF707D00323206 /* Info.plist */,
 			);
-			path = "ECG WorkflowTests";
+			path = FhirEcgTests;
 			sourceTree = "<group>";
 		};
-		AFA6CF2723CF707D00323206 /* ECG WorkflowUITests */ = {
+		AFA6CF2723CF707D00323206 /* FhirEcgUITests */ = {
 			isa = PBXGroup;
 			children = (
-				AFA6CF2823CF707D00323206 /* ECG_WorkflowUITests.swift */,
+				AFA6CF2823CF707D00323206 /* FhirEcgUITests.swift */,
 				AFA6CF2A23CF707D00323206 /* Info.plist */,
 			);
-			path = "ECG WorkflowUITests";
+			path = FhirEcgUITests;
 			sourceTree = "<group>";
 		};
-		AFA6CF3B23CF713F00323206 /* ECG Workflow Share Extension */ = {
+		AFA6CF3B23CF713F00323206 /* FhirEcg Share Extension */ = {
 			isa = PBXGroup;
 			children = (
 				AFA6CF3C23CF713F00323206 /* ShareViewController.swift */,
@@ -227,7 +255,7 @@
 				AF4A3F7D244F1A65007072C7 /* ECG Workflow Share Extension.entitlements */,
 				AFA6CF4123CF713F00323206 /* Info.plist */,
 			);
-			path = "ECG Workflow Share Extension";
+			path = "FhirEcg Share Extension";
 			sourceTree = "<group>";
 		};
 		AFC80E932494CB710075ADD3 /* UserInterface */ = {
@@ -252,7 +280,7 @@
 				AF16999B242F8D85001F280E /* PanTompkinsAdapter.swift */,
 				AF16999E242F8E04001F280E /* panTompkins.c */,
 				AF16999F242F8E04001F280E /* panTompkins.h */,
-				AF16999D242F8E03001F280E /* ECG Workflow Share Extension-Bridging-Header.h */,
+				AF16999D242F8E03001F280E /* FhirEcg Share Extension-Bridging-Header.h */,
 			);
 			path = PanTompkins;
 			sourceTree = "<group>";
@@ -295,11 +323,12 @@
 			path = UserInterface;
 			sourceTree = "<group>";
 		};
-		AFC80E9A2494CE170075ADD3 /* ECG Workflow Share Extension Tests */ = {
+		AFC80E9A2494CE170075ADD3 /* FhirEcg Share Extension Tests */ = {
 			isa = PBXGroup;
 			children = (
+				AF287B6024962C9400C27B30 /* TestData */,
 			);
-			path = "ECG Workflow Share Extension Tests";
+			path = "FhirEcg Share Extension Tests";
 			sourceTree = "<group>";
 		};
 		AFC80E9B2494CE550075ADD3 /* Clients */ = {
@@ -320,9 +349,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AFA6CF0223CF707700323206 /* ECG Workflow */ = {
+		AFA6CF0223CF707700323206 /* FhirEcg */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AFA6CF2D23CF707D00323206 /* Build configuration list for PBXNativeTarget "ECG Workflow" */;
+			buildConfigurationList = AFA6CF2D23CF707D00323206 /* Build configuration list for PBXNativeTarget "FhirEcg" */;
 			buildPhases = (
 				AFA6CEFF23CF707700323206 /* Sources */,
 				AFA6CF0023CF707700323206 /* Frameworks */,
@@ -334,16 +363,16 @@
 			dependencies = (
 				AFA6CF4323CF713F00323206 /* PBXTargetDependency */,
 			);
-			name = "ECG Workflow";
+			name = FhirEcg;
 			packageProductDependencies = (
 			);
 			productName = "ECG Workflow";
-			productReference = AFA6CF0323CF707700323206 /* ECG Workflow.app */;
+			productReference = AFA6CF0323CF707700323206 /* FhirEcg.app */;
 			productType = "com.apple.product-type.application";
 		};
-		AFA6CF1823CF707D00323206 /* ECG WorkflowTests */ = {
+		AFA6CF1823CF707D00323206 /* FhirEcgTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AFA6CF3023CF707D00323206 /* Build configuration list for PBXNativeTarget "ECG WorkflowTests" */;
+			buildConfigurationList = AFA6CF3023CF707D00323206 /* Build configuration list for PBXNativeTarget "FhirEcgTests" */;
 			buildPhases = (
 				AFA6CF1523CF707D00323206 /* Sources */,
 				AFA6CF1623CF707D00323206 /* Frameworks */,
@@ -354,14 +383,14 @@
 			dependencies = (
 				AFA6CF1B23CF707D00323206 /* PBXTargetDependency */,
 			);
-			name = "ECG WorkflowTests";
+			name = FhirEcgTests;
 			productName = "ECG WorkflowTests";
-			productReference = AFA6CF1923CF707D00323206 /* ECG WorkflowTests.xctest */;
+			productReference = AFA6CF1923CF707D00323206 /* FhirEcgTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		AFA6CF2323CF707D00323206 /* ECG WorkflowUITests */ = {
+		AFA6CF2323CF707D00323206 /* FhirEcgUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AFA6CF3323CF707D00323206 /* Build configuration list for PBXNativeTarget "ECG WorkflowUITests" */;
+			buildConfigurationList = AFA6CF3323CF707D00323206 /* Build configuration list for PBXNativeTarget "FhirEcgUITests" */;
 			buildPhases = (
 				AFA6CF2023CF707D00323206 /* Sources */,
 				AFA6CF2123CF707D00323206 /* Frameworks */,
@@ -372,14 +401,14 @@
 			dependencies = (
 				AFA6CF2623CF707D00323206 /* PBXTargetDependency */,
 			);
-			name = "ECG WorkflowUITests";
+			name = FhirEcgUITests;
 			productName = "ECG WorkflowUITests";
-			productReference = AFA6CF2423CF707D00323206 /* ECG WorkflowUITests.xctest */;
+			productReference = AFA6CF2423CF707D00323206 /* FhirEcgUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		AFA6CF3923CF713F00323206 /* ECG Workflow Share Extension */ = {
+		AFA6CF3923CF713F00323206 /* FhirEcg Share Extension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AFA6CF4523CF713F00323206 /* Build configuration list for PBXNativeTarget "ECG Workflow Share Extension" */;
+			buildConfigurationList = AFA6CF4523CF713F00323206 /* Build configuration list for PBXNativeTarget "FhirEcg Share Extension" */;
 			buildPhases = (
 				AFA6CF3623CF713F00323206 /* Sources */,
 				AFA6CF3723CF713F00323206 /* Frameworks */,
@@ -389,7 +418,7 @@
 			);
 			dependencies = (
 			);
-			name = "ECG Workflow Share Extension";
+			name = "FhirEcg Share Extension";
 			packageProductDependencies = (
 				AFC266A423D738B000B56A0A /* SMART */,
 				AFC266A723D85A1C00B56A0A /* CSV */,
@@ -397,7 +426,7 @@
 				AF2D50482403B99A00553F24 /* ZIPFoundation */,
 			);
 			productName = "ECG Workflow Share Extension";
-			productReference = AFA6CF3A23CF713F00323206 /* ECG Workflow Share Extension.appex */;
+			productReference = AFA6CF3A23CF713F00323206 /* FhirEcg Share Extension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -427,7 +456,7 @@
 					};
 				};
 			};
-			buildConfigurationList = AFA6CEFE23CF707700323206 /* Build configuration list for PBXProject "ECG Workflow" */;
+			buildConfigurationList = AFA6CEFE23CF707700323206 /* Build configuration list for PBXProject "FhirEcg" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -446,10 +475,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AFA6CF0223CF707700323206 /* ECG Workflow */,
-				AFA6CF1823CF707D00323206 /* ECG WorkflowTests */,
-				AFA6CF2323CF707D00323206 /* ECG WorkflowUITests */,
-				AFA6CF3923CF713F00323206 /* ECG Workflow Share Extension */,
+				AFA6CF0223CF707700323206 /* FhirEcg */,
+				AFA6CF1823CF707D00323206 /* FhirEcgTests */,
+				AFA6CF2323CF707D00323206 /* FhirEcgUITests */,
+				AFA6CF3923CF713F00323206 /* FhirEcg Share Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -484,7 +513,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF287B6A24962D7400C27B30 /* ecg_2019-12-18_2.csv in Resources */,
+				AF287B6C24962D7400C27B30 /* ecg_2019-12-18_3.csv in Resources */,
+				AF287B6924962D7400C27B30 /* ecg_2019-12-18.csv in Resources */,
 				AF19705C23E08B25009E38B5 /* Assets.xcassets in Resources */,
+				AF287B6824962D7400C27B30 /* ecg_2020-01-29.csv in Resources */,
+				AF287B6E24962D7400C27B30 /* ecg_2020-02-02.csv in Resources */,
+				AF287B6B24962D7400C27B30 /* ecg_2019-12-18_1.csv in Resources */,
+				AF287B6D24962D7400C27B30 /* ecg_2020-01-29_1.csv in Resources */,
 				AFA6CF4023CF713F00323206 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -506,7 +542,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFA6CF1E23CF707D00323206 /* ECG_WorkflowTests.swift in Sources */,
+				AFA6CF1E23CF707D00323206 /* FhirEcgTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,7 +550,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFA6CF2923CF707D00323206 /* ECG_WorkflowUITests.swift in Sources */,
+				AFA6CF2923CF707D00323206 /* FhirEcgUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -543,17 +579,17 @@
 /* Begin PBXTargetDependency section */
 		AFA6CF1B23CF707D00323206 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = AFA6CF0223CF707700323206 /* ECG Workflow */;
+			target = AFA6CF0223CF707700323206 /* FhirEcg */;
 			targetProxy = AFA6CF1A23CF707D00323206 /* PBXContainerItemProxy */;
 		};
 		AFA6CF2623CF707D00323206 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = AFA6CF0223CF707700323206 /* ECG Workflow */;
+			target = AFA6CF0223CF707700323206 /* FhirEcg */;
 			targetProxy = AFA6CF2523CF707D00323206 /* PBXContainerItemProxy */;
 		};
 		AFA6CF4323CF713F00323206 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = AFA6CF3923CF713F00323206 /* ECG Workflow Share Extension */;
+			target = AFA6CF3923CF713F00323206 /* FhirEcg Share Extension */;
 			targetProxy = AFA6CF4223CF713F00323206 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -703,18 +739,18 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "ECG Workflow/ECG Workflow.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"ECG Workflow/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"FhirEcg/Preview Content\"";
 				DEVELOPMENT_TEAM = ZN2U3UB7W5;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "ECG Workflow/Info.plist";
+				INFOPLIST_FILE = FhirEcg/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.bih.ECG-Workflow";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bih.FhirEcg;
+				PRODUCT_NAME = FhirEcg;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -725,18 +761,18 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "ECG Workflow/ECG Workflow.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"ECG Workflow/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"FhirEcg/Preview Content\"";
 				DEVELOPMENT_TEAM = ZN2U3UB7W5;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "ECG Workflow/Info.plist";
+				INFOPLIST_FILE = FhirEcg/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.bih.ECG-Workflow";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bih.FhirEcg;
+				PRODUCT_NAME = FhirEcg;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -749,18 +785,18 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZN2U3UB7W5;
-				INFOPLIST_FILE = "ECG WorkflowTests/Info.plist";
+				INFOPLIST_FILE = FhirEcg/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.bih.ECG-WorkflowTests";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bih.FhirEcgTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ECG Workflow.app/ECG Workflow";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FhirEcg.app/FhirEcg";
 			};
 			name = Debug;
 		};
@@ -771,18 +807,18 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZN2U3UB7W5;
-				INFOPLIST_FILE = "ECG WorkflowTests/Info.plist";
+				INFOPLIST_FILE = FhirEcg/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.bih.ECG-WorkflowTests";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bih.FhirEcgTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ECG Workflow.app/ECG Workflow";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FhirEcg.app/FhirEcg";
 			};
 			name = Release;
 		};
@@ -830,20 +866,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "ECG Workflow Share Extension/ECG Workflow Share Extension.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZN2U3UB7W5;
-				INFOPLIST_FILE = "ECG Workflow Share Extension/Info.plist";
+				INFOPLIST_FILE = "FhirEcg Share Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.bih.ECG-Workflow.ECG-Workflow-Share-Extension";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bih.FhirEcg.FhirEcg-Share-Extension";
+				PRODUCT_NAME = "FhirEcg Share Extension";
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "ECG Workflow Share Extension/PanTompkins/ECG Workflow Share Extension-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "FhirEcg Share Extension/PanTompkins/FhirEcg Share Extension-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -854,20 +890,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "ECG Workflow Share Extension/ECG Workflow Share Extension.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZN2U3UB7W5;
-				INFOPLIST_FILE = "ECG Workflow Share Extension/Info.plist";
+				INFOPLIST_FILE = "FhirEcg Share Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.bih.ECG-Workflow.ECG-Workflow-Share-Extension";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bih.FhirEcg.FhirEcg-Share-Extension";
+				PRODUCT_NAME = "FhirEcg Share Extension";
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "ECG Workflow Share Extension/PanTompkins/ECG Workflow Share Extension-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "FhirEcg Share Extension/PanTompkins/FhirEcg Share Extension-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -876,7 +912,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AFA6CEFE23CF707700323206 /* Build configuration list for PBXProject "ECG Workflow" */ = {
+		AFA6CEFE23CF707700323206 /* Build configuration list for PBXProject "FhirEcg" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AFA6CF2B23CF707D00323206 /* Debug */,
@@ -885,7 +921,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AFA6CF2D23CF707D00323206 /* Build configuration list for PBXNativeTarget "ECG Workflow" */ = {
+		AFA6CF2D23CF707D00323206 /* Build configuration list for PBXNativeTarget "FhirEcg" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AFA6CF2E23CF707D00323206 /* Debug */,
@@ -894,7 +930,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AFA6CF3023CF707D00323206 /* Build configuration list for PBXNativeTarget "ECG WorkflowTests" */ = {
+		AFA6CF3023CF707D00323206 /* Build configuration list for PBXNativeTarget "FhirEcgTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AFA6CF3123CF707D00323206 /* Debug */,
@@ -903,7 +939,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AFA6CF3323CF707D00323206 /* Build configuration list for PBXNativeTarget "ECG WorkflowUITests" */ = {
+		AFA6CF3323CF707D00323206 /* Build configuration list for PBXNativeTarget "FhirEcgUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AFA6CF3423CF707D00323206 /* Debug */,
@@ -912,7 +948,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AFA6CF4523CF713F00323206 /* Build configuration list for PBXNativeTarget "ECG Workflow Share Extension" */ = {
+		AFA6CF4523CF713F00323206 /* Build configuration list for PBXNativeTarget "FhirEcg Share Extension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AFA6CF4623CF713F00323206 /* Debug */,

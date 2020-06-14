@@ -31,6 +31,20 @@ class EcgObservation {
         convertFhirObservationToSmartObservation()
     }
     
+    private func createPatient() {
+        //var patient = Patient()
+        //patient.na
+    }
+    
+    private func createObservationFromData() {
+        var observation = Observation()
+        observation.status = ObservationStatus(rawValue: "final")
+        //observation.performer = ecgData.name!
+        
+        
+        
+    }
+    
     private func buildFhirObservation() {
         // Load observation template
         fhirObservation = templates.observationTemplate
