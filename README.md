@@ -12,3 +12,7 @@ Features:
 1. Clone the repository
 2. Install the application on your iPhone via Xcode
 3. Follow the on-screen instructions in the main app
+
+# Next up
+
+The next step is to move away from JSON to Swift-SMART for the creation of the observations. This will allow for authentication and more features in the future. Feel free to open a pull request!
