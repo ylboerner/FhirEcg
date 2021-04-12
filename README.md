@@ -1,3 +1,5 @@
+**Important Information: This project is deprecated and obsolete as Apple has now released the HealthKit API for ECG records. The successor is [Einthoven](https://github.com/ylboerner/Einthoven) which uses Apple's interface. However, you can still use this project as an example on how to receive the Apple's healthkit .zip export.**
+
 # FhirEcg
 
 This project is an iOS application that permits users to send their ECG records captured on their Apple Watch directly to a FHIR server. It was developed during the corresponding bachelor thesis 'Implementing an ECG Data Workflow'. 
